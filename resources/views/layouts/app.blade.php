@@ -70,6 +70,9 @@
                         <a class="dropdown-item" href="palestras">Palestras</a>
                     </div>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" role="button" href="galeria">Galeria de Fotos</a>
+                </li>
             </ul>
         </div>
     </nav>

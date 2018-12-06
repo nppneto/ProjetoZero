@@ -95,7 +95,7 @@
                                     <td>{{ $curso->endereco }}</td>
                                     <td>{{ $curso->dt_inicio}}</td>
                                     <td>{{ $curso->dt_fim}}</td>
-                                    <td>350,00</td>
+                                    <td>R$ {{ $curso->valor }}</td>
                                 @endforeach
                             </tr>
                         </tbody>

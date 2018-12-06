@@ -52,3 +52,7 @@ Route::get('/cursos-profissionalizantes', function () {
 Route::get('/palestras', function () {
     return view('palestras');
 });
+
+Route::get('/galeria', function () {
+    return view('galeria');
+});
