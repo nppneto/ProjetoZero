@@ -49,9 +49,9 @@ Route::get('/assessoria', function () {
     return view('assessoria');
 });
 
-Route::get('/cursos-profissionalizantes', function () {
-    return view('cursos_profissionalizantes');
-});
+Route::get('/cursos-profissionalizantes', 'CursosProfissionalizantes@index');
+
+Route::get('/cursos-profissionalizantes/detalhes/{id}', 'Detalhes@getCursoById');
 
 Route::get('/palestras', function () {
     return view('palestras');

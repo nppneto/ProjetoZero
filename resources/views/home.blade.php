@@ -15,7 +15,7 @@
 
 <div class="container">
 
-    <h2 class="emAlta">Cursos em Alta</h2>
+    <h2>Cursos em Alta</h2>
 
     <div class="album py-5 bg-light">
         <div class="container">
@@ -31,7 +31,7 @@
                                 <p class="card-text">{{ $destaque->descricao }}</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Leia mais</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary"><a href="cursos-profissionalizantes">Todos os cursos</a></button>
                                     </div>
                                     <small class="text-muted">Em alta</small>
                                 </div>
