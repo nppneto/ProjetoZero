@@ -20,19 +20,19 @@
     <section class="page_home">
         <section class="cursos_destaque">
             <header>
-                    <h3>Cursos em destaque</h3>
+                    <h3>Cursos em Destaque</h3>
             </header>
             <div class="row">
-                @foreach ($cursosDestaque as $destaque)
+                @foreach ($destaques as $destaque)
                     <article class="col-md-4" >
                         <div class="card mb-4 shadow-md">
                             {{-- <img class="card-img-top"> --}}
                             <div class="card-body">
                                 <p class="card-text">{{ $destaque->titulo }}</p>
-                                <p class="card-content-body">{{ $destaque->descricao }}</p>
+                                <p class="card-content-body">{{ $destaque->txt_destaque }}</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm"><a href="cursos/{{ $destaque->id_curso }}">Saiba mais</a></button>
+                                        <button type="button" class="btn btn-sm"><a href="cursos/{{ $destaque->id }}">Saiba mais</a></button>
                                     </div>
                                     {{-- <small class="text-muted">Em alta</small> --}}
                                 </div>

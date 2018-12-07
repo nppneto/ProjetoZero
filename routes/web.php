@@ -23,7 +23,7 @@ Route::get('/contato/{id}', 'CursosProfissionalizantes@getAssuntoOrcamento');
 
 
 //PÁGINAS ESTÁTICAS
-Route::get('/nossa-historia', function () {
+Route::get('/historia', function () {
     return view('historia');
 });
 
@@ -31,7 +31,7 @@ Route::get('/missao', function () {
     return view('missao');
 });
 
-Route::get('/corpo-executivo', function () {
+Route::get('/executivo', function () {
     return view('executivo');
 });
 

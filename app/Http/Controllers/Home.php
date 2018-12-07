@@ -24,19 +24,18 @@ class Home extends Controller
                                     curso 
                                 WHERE ativo = 1");
 
-        $cursosDestaque = DB::select('SELECT
-                                            CD.id_curso AS id_curso,
-                                            C.titulo AS titulo,
-                                            C.descricao AS descricao
+        $cursosDestaque = DB::select('SELECT 
+                                            id,
+                                            titulo,
+                                            txt_destaque
                                         FROM
-                                            curso_destaque AS CD
-                                        INNER JOIN curso AS C
-                                        WHERE C.id = CD.id_curso
+                                            curso
+                                        WHERE destaque = 1
                                         LIMIT 3');
 
         return view('home', [
             'cursos' => $cursos,
-            'cursosDestaque' => $cursosDestaque
+            'destaques' => $cursosDestaque
         ]);
     }
 
