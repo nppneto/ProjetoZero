@@ -10,19 +10,19 @@ class Home extends Controller
     
     public function index() {
 
-        $cursos = DB::select('SELECT 
+        $cursos = DB::select("SELECT 
                                     titulo,
                                     endereco,
-                                    dt_inicio,
-                                    dt_fim,
-                                    horario_inicio,
-                                    horario_fim,
+                                    DATE_FORMAT(dt_inicio, '%d/%m/%y') AS dt_inicio,
+                                    DATE_FORMAT(dt_fim, '%d/%m/%y') AS dt_fim,
+                                    TIME_FORMAT(horario_inicio, '%H:%i') AS horario_inicio,
+                                    TIME_FORMAT(horario_fim, '%H:%i') AS horario_fim,
                                     periodo,
                                     descricao,
                                     valor 
                                 FROM 
                                     curso 
-                                WHERE ativo = 1');
+                                WHERE ativo = 1");
 
         $cursosDestaque = DB::select('SELECT
                                             CD.id_curso AS id_curso,

@@ -26,6 +26,11 @@ h2 {
   text-align: center;
 }
 
+#inputComentario {
+  width: 525px;
+  height: 200px;
+}
+
 footer {
   position: fixed;
   height: 50px;

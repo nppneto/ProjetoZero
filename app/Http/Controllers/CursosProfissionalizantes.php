@@ -32,6 +32,7 @@ class CursosProfissionalizantes extends Controller
     public function getCursoById($id) {
 
         $cursoById = DB::select("SELECT
+                                        id,
                                         titulo,
                                         endereco,
                                         DATE_FORMAT(dt_inicio, '%d/%m/%y') AS dt_inicio,
@@ -47,6 +48,20 @@ class CursosProfissionalizantes extends Controller
             
 
         return view('detalhes', ['cursos' => $cursoById]);
+    }
+
+
+    public function getAssuntoOrcamento($id) {
+
+        $assunto = DB::select("SELECT
+                                        id,
+                                        titulo
+                                    FROM
+                                        curso
+                                    WHERE id = :id", [':id' => $id]);
+            
+
+        return view('contato', ['assuntos' => $assunto]);
     }
 
 //Fim do Controller

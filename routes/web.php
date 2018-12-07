@@ -18,6 +18,8 @@ Route::get('/cursos', 'CursosProfissionalizantes@index');
 
 Route::get('/cursos/{id}', 'CursosProfissionalizantes@getCursoById');
 
+Route::get('/contato/{id}', 'CursosProfissionalizantes@getAssuntoOrcamento');
+
 
 
 //PÁGINAS ESTÁTICAS
