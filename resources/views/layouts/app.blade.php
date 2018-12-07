@@ -39,9 +39,9 @@
                         Gestor
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="nossa-historia">Nossa História</a>
+                        <a class="dropdown-item" href="historia">Nossa História</a>
                         <a class="dropdown-item" href="missao">Missão</a>
-                        <a class="dropdown-item" href="corpo-executivo">Corpo Executivo</a>
+                        <a class="dropdown-item" href="executivo">Corpo Executivo</a>
                         <a class="dropdown-item" href="premiacao">Premiação</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="mensagens">Mensagens</a>

@@ -11,14 +11,18 @@
 |
 */
 
+//PÁGINAS DINÂMICAS
 Route::get('/', 'Home@index');
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/cursos', 'CursosProfissionalizantes@index');
 
+Route::get('/cursos/{id}', 'CursosProfissionalizantes@getCursoById');
+
+
+
+//PÁGINAS ESTÁTICAS
 Route::get('/nossa-historia', function () {
-    return view('nossa_historia');
+    return view('historia');
 });
 
 Route::get('/missao', function () {
@@ -26,7 +30,7 @@ Route::get('/missao', function () {
 });
 
 Route::get('/corpo-executivo', function () {
-    return view('corpo_executivo');
+    return view('executivo');
 });
 
 Route::get('/premiacao', function () {
@@ -48,10 +52,6 @@ Route::get('/consultoria', function () {
 Route::get('/assessoria', function () {
     return view('assessoria');
 });
-
-Route::get('/cursos', 'CursosProfissionalizantes@index');
-
-Route::get('/cursos/{id}', 'CursosProfissionalizantes@getCursoById');
 
 Route::get('/palestras', function () {
     return view('palestras');
