@@ -65,7 +65,7 @@
                         Educação
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="cursos-profissionalizantes">Cursos Profissionalizantes</a>
+                        <a class="dropdown-item" href="cursos">Cursos Profissionalizantes</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="palestras">Palestras</a>
                     </div>

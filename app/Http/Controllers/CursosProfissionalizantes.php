@@ -24,7 +24,7 @@ class CursosProfissionalizantes extends Controller
                                     curso 
                                 WHERE ativo = 1');
 
-        return view('cursos_profissionalizantes', [
+        return view('cursos', [
             'cursos' => $cursos
         ]);
     }
@@ -36,8 +36,8 @@ class CursosProfissionalizantes extends Controller
                                         endereco,
                                         DATE_FORMAT(dt_inicio, '%d/%m/%y') AS dt_inicio,
                                         DATE_FORMAT(dt_fim, '%d/%m/%y') AS dt_fim,
-                                        horario_inicio,
-                                        horario_fim,
+                                        TIME_FORMAT(horario_inicio, '%H:%i') AS horario_inicio,
+                                        TIME_FORMAT(horario_fim, '%H:%i') AS horario_fim,
                                         periodo,
                                         descricao,
                                         valor
