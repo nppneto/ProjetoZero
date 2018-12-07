@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);/*!
+@import url(https://fonts.googleapis.com/css?family=Roboto);/*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
@@ -32,7 +32,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Nunito", sans-serif;
+  --font-family-sans-serif: "Roboto", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -71,7 +71,7 @@ section {
 
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -6319,7 +6319,7 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -6444,7 +6444,7 @@ button.close {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -10466,11 +10466,6 @@ a.text-dark:focus {
   }
 }
 
-.d-block {
-  width: 300px;
-  height: 300px;
-}
-
 /* Layout
 *****************************************************/
 
@@ -10494,7 +10489,7 @@ footer ul li {
 }
 
 footer {
-  position: relative;
+  position: fixed;
   height: 50px;
   margin-top: -50px;
   left: 0px;
@@ -10503,8 +10498,6 @@ footer {
   width: 100%;
   text-align: center;
 }
-
-/******************************************************/
 
 /* Home
 *****************************************************/
@@ -10521,6 +10514,12 @@ footer {
   margin-left: 70px;
 }
 
+.faixa-sup .tw {
+  margin-top: 80px;
+  margin-left: 70px;
+  font-size: 48px;
+}
+
 .faixa-inf {
   background: #d8dee2;
   height: 50px;
@@ -10535,19 +10534,23 @@ footer {
 }
 
 .cursos_destaque {
-  border: 1px solid black;
   height: 400px;
   margin-top: 35px;
 }
 
 .cursos_destaque header {
-  text-align: center;
   margin-bottom: 35px;
-  border: 1px solid #d8dee2;
 }
 
 .cursos_destaque header h3 {
-  color: silver;
+  height: 60px;
+  line-height: 60px;
+  color: #fff;
+  background-color: #146785;
+  display: inline-block;
+  padding: 0 150px 0 60px;
+  font-weight: 700;
+  font-size: 22px;
 }
 
 .depoimentos {
@@ -10563,8 +10566,72 @@ footer {
   margin-bottom: 150px;
 }
 
-/******************************************************/
+.marquee {
+  width: 100%;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
-/* Home
-*****************************************************/
+.marquee span {
+  display: inline-block;
+  padding-left: 100%;
+  text-indent: 0;
+  font-size: 14px;
+  color: #1887b0;
+  -webkit-animation: marquee 15s linear infinite;
+          animation: marquee 15s linear infinite;
+}
+
+.marquee span:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+@-webkit-keyframes marquee {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+
+  100% {
+    -webkit-transform: translate(-100%, 0);
+            transform: translate(-100%, 0);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+
+  100% {
+    -webkit-transform: translate(-100%, 0);
+            transform: translate(-100%, 0);
+  }
+}
+
+.card {
+  height: 350px;
+  font-size: 13px;
+}
+
+.card .card:hover {
+  -webkit-box-shadow: -1px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+}
+
+.card .card-text {
+  color: #1887b0;
+  font-size: 16px;
+}
+
+.card .card-content-body {
+  text-align: justify;
+}
 

@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 11);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -71,7 +71,7 @@
 
 
 var bind = __webpack_require__(5);
-var isBuffer = __webpack_require__(19);
+var isBuffer = __webpack_require__(18);
 
 /*global toString:true*/
 
@@ -375,33 +375,6 @@ module.exports = {
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -424,10 +397,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(7);
+    adapter = __webpack_require__(6);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(7);
+    adapter = __webpack_require__(6);
   }
   return adapter;
 }
@@ -502,7 +475,34 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(20)))
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
 
 /***/ }),
 /* 3 */
@@ -3083,7 +3083,7 @@ Popper.Defaults = Defaults;
 /* harmony default export */ __webpack_exports__["default"] = (Popper);
 //# sourceMappingURL=popper.js.map
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2)))
 
 /***/ }),
 /* 4 */
@@ -13476,196 +13476,6 @@ module.exports = function bind(fn, thisArg) {
 
 /***/ }),
 /* 6 */
-/***/ (function(module, exports) {
-
-// shim for using process in browser
-var process = module.exports = {};
-
-// cached from whatever global is present so that test runners that stub it
-// don't break things.  But we need to wrap it in a try catch in case it is
-// wrapped in strict mode code which doesn't define any globals.  It's inside a
-// function because try/catches deoptimize in certain engines.
-
-var cachedSetTimeout;
-var cachedClearTimeout;
-
-function defaultSetTimout() {
-    throw new Error('setTimeout has not been defined');
-}
-function defaultClearTimeout () {
-    throw new Error('clearTimeout has not been defined');
-}
-(function () {
-    try {
-        if (typeof setTimeout === 'function') {
-            cachedSetTimeout = setTimeout;
-        } else {
-            cachedSetTimeout = defaultSetTimout;
-        }
-    } catch (e) {
-        cachedSetTimeout = defaultSetTimout;
-    }
-    try {
-        if (typeof clearTimeout === 'function') {
-            cachedClearTimeout = clearTimeout;
-        } else {
-            cachedClearTimeout = defaultClearTimeout;
-        }
-    } catch (e) {
-        cachedClearTimeout = defaultClearTimeout;
-    }
-} ())
-function runTimeout(fun) {
-    if (cachedSetTimeout === setTimeout) {
-        //normal enviroments in sane situations
-        return setTimeout(fun, 0);
-    }
-    // if setTimeout wasn't available but was latter defined
-    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-        cachedSetTimeout = setTimeout;
-        return setTimeout(fun, 0);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedSetTimeout(fun, 0);
-    } catch(e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-            return cachedSetTimeout.call(null, fun, 0);
-        } catch(e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-            return cachedSetTimeout.call(this, fun, 0);
-        }
-    }
-
-
-}
-function runClearTimeout(marker) {
-    if (cachedClearTimeout === clearTimeout) {
-        //normal enviroments in sane situations
-        return clearTimeout(marker);
-    }
-    // if clearTimeout wasn't available but was latter defined
-    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-        cachedClearTimeout = clearTimeout;
-        return clearTimeout(marker);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedClearTimeout(marker);
-    } catch (e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-            return cachedClearTimeout.call(null, marker);
-        } catch (e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-            return cachedClearTimeout.call(this, marker);
-        }
-    }
-
-
-
-}
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-
-function cleanUpNextTick() {
-    if (!draining || !currentQueue) {
-        return;
-    }
-    draining = false;
-    if (currentQueue.length) {
-        queue = currentQueue.concat(queue);
-    } else {
-        queueIndex = -1;
-    }
-    if (queue.length) {
-        drainQueue();
-    }
-}
-
-function drainQueue() {
-    if (draining) {
-        return;
-    }
-    var timeout = runTimeout(cleanUpNextTick);
-    draining = true;
-
-    var len = queue.length;
-    while(len) {
-        currentQueue = queue;
-        queue = [];
-        while (++queueIndex < len) {
-            if (currentQueue) {
-                currentQueue[queueIndex].run();
-            }
-        }
-        queueIndex = -1;
-        len = queue.length;
-    }
-    currentQueue = null;
-    draining = false;
-    runClearTimeout(timeout);
-}
-
-process.nextTick = function (fun) {
-    var args = new Array(arguments.length - 1);
-    if (arguments.length > 1) {
-        for (var i = 1; i < arguments.length; i++) {
-            args[i - 1] = arguments[i];
-        }
-    }
-    queue.push(new Item(fun, args));
-    if (queue.length === 1 && !draining) {
-        runTimeout(drainQueue);
-    }
-};
-
-// v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function () {
-    this.fun.apply(null, this.array);
-};
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
-
-function noop() {}
-
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-process.prependListener = noop;
-process.prependOnceListener = noop;
-
-process.listeners = function (name) { return [] }
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
-};
-
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-process.umask = function() { return 0; };
-
-
-/***/ }),
-/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13676,7 +13486,7 @@ var settle = __webpack_require__(22);
 var buildURL = __webpack_require__(24);
 var parseHeaders = __webpack_require__(25);
 var isURLSameOrigin = __webpack_require__(26);
-var createError = __webpack_require__(8);
+var createError = __webpack_require__(7);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(27);
 
 module.exports = function xhrAdapter(config) {
@@ -13852,7 +13662,7 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13877,7 +13687,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13889,7 +13699,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13915,15 +13725,15 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(12);
-module.exports = __webpack_require__(43);
+__webpack_require__(11);
+module.exports = __webpack_require__(38);
 
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -13933,7 +13743,8 @@ module.exports = __webpack_require__(43);
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(13);
+__webpack_require__(12);
+__webpack_require__(36);
 
 // window.Vue = require('vue');
 
@@ -13961,11 +13772,11 @@ __webpack_require__(13);
 // });
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(14);
+window._ = __webpack_require__(13);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -13977,7 +13788,7 @@ try {
   window.Popper = __webpack_require__(3).default;
   window.$ = window.jQuery = __webpack_require__(4);
 
-  __webpack_require__(16);
+  __webpack_require__(15);
 } catch (e) {}
 
 /**
@@ -13986,7 +13797,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(17);
+window.axios = __webpack_require__(16);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -14022,7 +13833,7 @@ if (token) {
 // });
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -31134,10 +30945,10 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(15)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(14)(module)))
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -31165,7 +30976,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -35115,13 +34926,13 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(18);
+module.exports = __webpack_require__(17);
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35129,8 +34940,8 @@ module.exports = __webpack_require__(18);
 
 var utils = __webpack_require__(0);
 var bind = __webpack_require__(5);
-var Axios = __webpack_require__(20);
-var defaults = __webpack_require__(2);
+var Axios = __webpack_require__(19);
+var defaults = __webpack_require__(1);
 
 /**
  * Create an instance of Axios
@@ -35163,9 +34974,9 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(10);
+axios.Cancel = __webpack_require__(9);
 axios.CancelToken = __webpack_require__(34);
-axios.isCancel = __webpack_require__(9);
+axios.isCancel = __webpack_require__(8);
 
 // Expose all/spread
 axios.all = function all(promises) {
@@ -35180,7 +34991,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, exports) {
 
 /*!
@@ -35207,13 +35018,13 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(2);
+var defaults = __webpack_require__(1);
 var utils = __webpack_require__(0);
 var InterceptorManager = __webpack_require__(29);
 var dispatchRequest = __webpack_require__(30);
@@ -35293,6 +35104,196 @@ module.exports = Axios;
 
 
 /***/ }),
+/* 20 */
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+
+/***/ }),
 /* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -35318,7 +35319,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 "use strict";
 
 
-var createError = __webpack_require__(8);
+var createError = __webpack_require__(7);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -35751,8 +35752,8 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(0);
 var transformData = __webpack_require__(31);
-var isCancel = __webpack_require__(9);
-var defaults = __webpack_require__(2);
+var isCancel = __webpack_require__(8);
+var defaults = __webpack_require__(1);
 var isAbsoluteURL = __webpack_require__(32);
 var combineURLs = __webpack_require__(33);
 
@@ -35911,7 +35912,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var Cancel = __webpack_require__(10);
+var Cancel = __webpack_require__(9);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -36003,14 +36004,657 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 36 */,
-/* 37 */,
-/* 38 */,
-/* 39 */,
-/* 40 */,
-/* 41 */,
-/* 42 */,
-/* 43 */
+/* 36 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_t_writer_js__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_t_writer_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_t_writer_js__);
+
+
+var target = document.querySelector('.tw');
+var options = {
+  loop: true,
+  typeColor: 'White'
+};
+
+var writer = new __WEBPACK_IMPORTED_MODULE_0_t_writer_js___default.a(target, options);
+writer.type('Gestor é administração').rest(500).changeOps({ deleteSpeed: 80 }).remove(13).type('treinamento').rest(500).changeOps({ deleteSpeed: 20 }).remove(11).type('palestra').rest(500).clear().start();
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function (global, factory) {
+   true ? module.exports = factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (global['t-writer'] = factory());
+}(this, (function () { 'use strict';
+
+  var classCallCheck = function (instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  };
+
+  var createClass = function () {
+    function defineProperties(target, props) {
+      for (var i = 0; i < props.length; i++) {
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+      }
+    }
+
+    return function (Constructor, protoProps, staticProps) {
+      if (protoProps) defineProperties(Constructor.prototype, protoProps);
+      if (staticProps) defineProperties(Constructor, staticProps);
+      return Constructor;
+    };
+  }();
+
+  var defaultOptions = {
+    loop: false,
+    animateCursor: true,
+
+    blinkSpeed: 400,
+
+    typeSpeed: 90,
+    deleteSpeed: 40,
+
+    typeSpeedMin: 65,
+    typeSpeedMax: 115,
+
+    deleteSpeedMin: 40,
+    deleteSpeedMax: 90,
+
+    typeClass: 'type-span',
+    cursorClass: 'cursor-span',
+
+    typeColor: 'black',
+    cursorColor: 'black'
+  };
+
+  var Cursor = function () {
+    function Cursor(el, speed) {
+      classCallCheck(this, Cursor);
+
+      this.el = el;
+      this.speed = speed;
+
+      this.faded = false;
+
+      this.initialAssignment();
+      this.el.addEventListener('transitionend', this.logic.bind(this));
+
+      this.fade = this.fade.bind(this);
+      this.fadeIn = this.fadeIn.bind(this);
+    }
+
+    createClass(Cursor, [{
+      key: 'initialAssignment',
+      value: function initialAssignment() {
+        Object.assign(this.el.style, {
+          opacity: '1',
+          'transition-duration': '0.1s'
+        });
+      }
+    }, {
+      key: 'fade',
+      value: function fade() {
+        this.el.style.opacity = '0';
+
+        this.faded = true;
+      }
+    }, {
+      key: 'fadeIn',
+      value: function fadeIn() {
+        this.el.style.opacity = '1';
+
+        this.faded = false;
+      }
+    }, {
+      key: 'logic',
+      value: function logic() {
+        this.faded ? setTimeout(this.fadeIn, this.speed) : setTimeout(this.fade, this.speed);
+      }
+    }, {
+      key: 'start',
+      value: function start() {
+        setTimeout(this.fade.bind(this), 0);
+      }
+    }]);
+    return Cursor;
+  }();
+
+  var Typewriter = function () {
+    function Typewriter(el, options) {
+      classCallCheck(this, Typewriter);
+
+      this.el = el;
+      this.text = '';
+      this.queue = [];
+      this.options = Object.assign({}, defaultOptions, options);
+
+      this.createTextEl();
+    }
+
+    // USER API
+
+    createClass(Typewriter, [{
+      key: 'type',
+      value: function type(str) {
+        this.queue.push({
+          type: 'type',
+          content: str
+        });
+
+        return this;
+      }
+    }, {
+      key: 'strings',
+      value: function strings(interval) {
+        var _this = this;
+
+        for (var _len = arguments.length, arr = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+          arr[_key - 1] = arguments[_key];
+        }
+
+        arr.forEach(function (str, i) {
+          _this.queue.push({
+            type: 'type',
+            content: str
+          });
+
+          if (interval) {
+            _this.queue.push({
+              type: 'pause',
+              time: interval
+            });
+          }
+
+          if (i === arr.length - 1) return;
+
+          _this.queue.push({
+            type: 'deleteChars',
+            count: str.length
+          });
+        });
+
+        return this;
+      }
+    }, {
+      key: 'remove',
+      value: function remove(num) {
+        this.queue.push({
+          type: 'deleteChars',
+          count: num
+        });
+
+        return this;
+      }
+    }, {
+      key: 'clear',
+      value: function clear() {
+        this.queue.push({
+          type: 'clear'
+        });
+
+        return this;
+      }
+    }, {
+      key: 'clearText',
+      value: function clearText() {
+        this.text = '';
+        this.render();
+
+        return this;
+      }
+    }, {
+      key: 'queueClearText',
+      value: function queueClearText() {
+        this.queue.push({
+          type: 'clearText'
+        });
+
+        return this;
+      }
+    }, {
+      key: 'clearQueue',
+      value: function clearQueue() {
+        this.queue = [];
+        this.text = '';
+        render();
+
+        return this;
+      }
+    }, {
+      key: 'rest',
+      value: function rest(time) {
+        this.queue.push({
+          type: 'pause',
+          time: time
+        });
+
+        return this;
+      }
+    }, {
+      key: 'changeOps',
+      value: function changeOps(options) {
+
+        this.queue.push({
+          type: 'changeOps',
+          options: options
+        });
+
+        return this;
+      }
+    }, {
+      key: 'then',
+      value: function then(cb) {
+        this.queue.push({
+          type: 'callback',
+          cb: cb
+        });
+
+        return this;
+      }
+    }, {
+      key: 'removeCursor',
+      value: function removeCursor() {
+        this.queue.push({
+          type: 'deleteCursor'
+        });
+
+        return this;
+      }
+    }, {
+      key: 'addCursor',
+      value: function addCursor() {
+        this.queue.push({
+          type: 'createCursor'
+        });
+
+        return this;
+      }
+    }, {
+      key: 'changeTypeColor',
+      value: function changeTypeColor(color) {
+        this.queue.push({
+          type: 'typeColor',
+          color: color
+        });
+
+        return this;
+      }
+    }, {
+      key: 'changeCursorColor',
+      value: function changeCursorColor(color) {
+        this.queue.push({
+          type: 'cursorColor',
+          color: color
+        });
+
+        return this;
+      }
+    }, {
+      key: 'changeTypeClass',
+      value: function changeTypeClass(className) {
+        this.queue.push({
+          type: 'typeClass',
+          className: className
+        });
+
+        return this;
+      }
+    }, {
+      key: 'changeCursorClass',
+      value: function changeCursorClass(className) {
+        this.queue.push({
+          type: 'cursorClass',
+          className: className
+        });
+
+        return this;
+      }
+    }, {
+      key: 'start',
+      value: function start() {
+        var _this2 = this;
+
+        if (this.running) return;
+
+        if (!this.cursorEl) {
+          this.createCursorEl();
+        }
+
+        this.running = true;
+        this.deleteAll().then(function (_) {
+          return _this2.loop(0);
+        });
+      }
+
+      // ACTIONS (promises)
+
+    }, {
+      key: 'add',
+      value: function add(content) {
+        var _this3 = this;
+
+        var count = 0;
+        this.timestamp = Date.now();
+
+        return new Promise(function (resolve, _) {
+
+          var _step = function _step() {
+            if (count === content.length) return resolve();
+
+            var newStamp = Date.now();
+            var change = newStamp - _this3.timestamp;
+
+            if (change >= _this3.getTypeSpeed()) {
+              _this3.addChar(content[count]);
+              _this3.timestamp = newStamp;
+              count++;
+            }
+            requestAnimationFrame(_step);
+          };
+
+          requestAnimationFrame(_step);
+        });
+      }
+    }, {
+      key: 'delete',
+      value: function _delete(count) {
+        var _this4 = this;
+
+        this.timestamp = Date.now();
+
+        return new Promise(function (resolve, _) {
+
+          var _step = function _step() {
+            if (count === 0) return resolve();
+
+            var newStamp = Date.now();
+            var change = newStamp - _this4.timestamp;
+
+            if (change >= _this4.getDeleteSpeed()) {
+              _this4.deleteChar();
+              _this4.timestamp = newStamp;
+              count--;
+            }
+            requestAnimationFrame(_step);
+          };
+
+          requestAnimationFrame(_step);
+        });
+      }
+    }, {
+      key: 'deleteAll',
+      value: function deleteAll() {
+        return this.delete(this.text.length);
+      }
+    }, {
+      key: 'pause',
+      value: function pause(time) {
+        return new Promise(function (resolve, _) {
+          setTimeout(resolve, time);
+        });
+      }
+    }, {
+      key: 'callback',
+      value: function callback(cb) {
+        return new Promise(function (resolve, _) {
+          cb();
+          resolve();
+        });
+      }
+    }, {
+      key: 'deleteCursor',
+      value: function deleteCursor() {
+        var _this5 = this;
+
+        return new Promise(function (resolve, _) {
+          _this5.removeCursorEl();
+          resolve();
+        });
+      }
+    }, {
+      key: 'createCursor',
+      value: function createCursor() {
+        var _this6 = this;
+
+        return new Promise(function (resolve, _) {
+          _this6.createCursorEl();
+          resolve();
+        });
+      }
+    }, {
+      key: 'clearTextAction',
+      value: function clearTextAction() {
+        var _this7 = this;
+
+        return new Promise(function (resolve, _) {
+          _this7.clearText();
+          resolve();
+        });
+      }
+    }, {
+      key: 'changeOpsAction',
+      value: function changeOpsAction(options) {
+        var _this8 = this;
+
+        return new Promise(function (resolve, _) {
+          _this8.options = Object.assign(_this8.options, options);
+          resolve();
+        });
+      }
+    }, {
+      key: 'typeColor',
+      value: function typeColor(color) {
+        var _this9 = this;
+
+        return new Promise(function (resolve, _) {
+          _this9.textEl.style.color = color;
+          resolve();
+        });
+      }
+    }, {
+      key: 'cursorColor',
+      value: function cursorColor(color) {
+        var _this10 = this;
+
+        return new Promise(function (resolve, _) {
+          _this10.cursorEl.style.color = color;
+          resolve();
+        });
+      }
+    }, {
+      key: 'typeClass',
+      value: function typeClass(className) {
+        var _this11 = this;
+
+        return new Promise(function (resolve, _) {
+          _this11.textEl.className = className;
+          resolve();
+        });
+      }
+    }, {
+      key: 'cursorClass',
+      value: function cursorClass(className) {
+        var _this12 = this;
+
+        return new Promise(function (resolve, _) {
+          _this12.cursorEl.className = className;
+          resolve();
+        });
+      }
+
+      // HELPERS
+
+    }, {
+      key: 'deleteChar',
+      value: function deleteChar() {
+        this.text = this.text.slice(0, -1);
+        this.render();
+      }
+    }, {
+      key: 'addChar',
+      value: function addChar(char) {
+        this.text += char;
+        this.render();
+      }
+    }, {
+      key: 'getTypeSpeed',
+      value: function getTypeSpeed() {
+        var speed = this.options.typeSpeed;
+
+        if (typeof speed === 'number') {
+          return speed;
+        }
+
+        var max = this.options.typeSpeedMax;
+        var min = this.options.typeSpeedMin;
+
+        var random = Math.floor(Math.random() * (max - min));
+        return random + min;
+      }
+    }, {
+      key: 'getDeleteSpeed',
+      value: function getDeleteSpeed() {
+        var speed = this.options.deleteSpeed;
+
+        if (typeof speed === 'number') {
+          return speed;
+        }
+
+        var max = this.options.deleteSpeedMax;
+        var min = this.options.deleteSpeedMin;
+
+        var random = Math.floor(Math.random() * (max - min));
+        return random + min;
+      }
+    }, {
+      key: 'step',
+      value: function step(idx) {
+        var action = this.queue[idx];
+
+        switch (action.type) {
+          case 'type':
+            return this.add(action.content);
+
+          case 'deleteChars':
+            return this.delete(action.count);
+
+          case 'clear':
+            return this.deleteAll();
+
+          case 'pause':
+            return this.pause(action.time);
+
+          case 'callback':
+            return this.callback(action.cb);
+
+          case 'deleteCursor':
+            return this.deleteCursor();
+
+          case 'createCursor':
+            return this.createCursor();
+
+          case 'clearText':
+            return this.clearTextAction();
+
+          case 'changeOps':
+            return this.changeOpsAction(action.options);
+
+          case 'typeColor':
+            return this.typeColor(action.color);
+
+          case 'cursorColor':
+            return this.cursorColor(action.color);
+
+          case 'typeClass':
+            return this.typeClass(action.className);
+
+          case 'cursorClass':
+            return this.cursorClass(action.className);
+        }
+      }
+    }, {
+      key: 'loop',
+      value: function loop(idx) {
+        var _this13 = this;
+
+        if (idx === this.queue.length) {
+          this.running = false;
+
+          if (this.options.loop) {
+            this.start();
+          }
+          return;
+        }
+
+        this.step(idx).then(function (_) {
+          _this13.loop(idx + 1);
+        });
+      }
+    }, {
+      key: 'createCursorEl',
+      value: function createCursorEl() {
+        if (typeof this.options.animateCursor === 'String') return;
+
+        this.cursorEl = document.createElement('span');
+        this.cursorEl.innerHTML = '|';
+
+        this.cursorEl.style.color = this.options.cursorColor;
+
+        this.cursorEl.classList.add(this.options.cursorClass);
+
+        this.el.appendChild(this.cursorEl);
+
+        if (this.options.animateCursor) {
+          this.cursor = new Cursor(this.cursorEl, this.options.blinkSpeed);
+
+          this.cursor.start();
+        }
+      }
+    }, {
+      key: 'removeCursorEl',
+      value: function removeCursorEl() {
+        this.el.removeChild(this.cursorEl);
+
+        this.cursorEl = null;
+      }
+    }, {
+      key: 'createTextEl',
+      value: function createTextEl() {
+        this.textEl = document.createElement('span');
+
+        this.textEl.classList.add(this.options.typeClass);
+
+        this.textEl.style.color = this.options.typeColor;
+
+        this.el.appendChild(this.textEl);
+      }
+    }, {
+      key: 'render',
+      value: function render() {
+        this.textEl.innerHTML = this.text;
+      }
+    }]);
+    return Typewriter;
+  }();
+
+  return Typewriter;
+
+})));
+
+
+/***/ }),
+/* 38 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

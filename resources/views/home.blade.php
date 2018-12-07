@@ -6,34 +6,50 @@
     <div class="img_blank">
         <img src="images/gestor_blank.png" alt="">
     </div>
-    <p>Gestor é: </p>
+    <div class="tw"></div>
 </div>
 
 <section class="faixa-inf">
     <div class="mensagem">
-        <div class="container">
-            <p>Ultimas notícias: <span style="color: red;">Em breve curso de administração sindical.</span></p>
-        </div>
+        <div class="container-fluid">
+            <p class="microsoft marquee"><span>Segundo delegado, homem disse que queria expulsar o animal, mas não teve a intenção de matar. Depoimento aconteceu na tarde desta quinta-feira</span></p>
     </div>
 </section>
 
 <main class="container">
-    <section>
+    <section class="page_home">
         <section class="cursos_destaque">
             <header>
                     <h3>Cursos em destaque</h3>
             </header>
-
-            <article></article>
-            <article></article>
-            <article></article>
+            <div class="row">
+                @foreach ($cursosDestaque as $destaque)
+                    <article class="col-md-4" >
+                        <div class="card mb-4 shadow-md">
+                            {{-- <img class="card-img-top"> --}}
+                            <div class="card-body">
+                                <p class="card-text">{{ $destaque->titulo }}</p>
+                                <p class="card-content-body">{{ $destaque->descricao }}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm"><a href="cursos/{{ $destaque->id_curso }}">Saiba mais</a></button>
+                                    </div>
+                                    {{-- <small class="text-muted">Em alta</small> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                @endforeach
+            </div>
         </section>
 
-        <div class="depoimentos">
-            <section>
-                <div class="depoimento"></div>
-            </section>
-        </div>
+        <section class="row">
+            <div class="depoimentos">
+                <section>
+                    <div class="depoimento"></div>
+                </section>
+            </div>
+        </section>
 
         <div class="inf_table_cursos">
             
