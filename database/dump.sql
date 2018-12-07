@@ -8,16 +8,19 @@ CREATE TABLE `usuario` (
 
 CREATE TABLE `curso` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(100) NOT NULL,
-  `endereco` varchar(100) NOT NULL,
+  `titulo` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `endereco` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `dt_inicio` date NOT NULL,
   `dt_fim` date NOT NULL,
   `horario_inicio` time NOT NULL,
   `horario_fim` time NOT NULL,
-  `periodo` varchar(10) NOT NULL,
-  `descricao` text NOT NULL,
+  `periodo` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descricao` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `ativo` int(11) NOT NULL,
   `valor` decimal(5,2) DEFAULT NULL,
+  `destaque` tinyint(1) NOT NULL,
+  `disponivel` tinyint(1) NOT NULL,
+  `txt_destaque` text COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -40,12 +43,4 @@ CREATE TABLE `log_erro` (
   PRIMARY KEY (`id`),
   KEY `id_usuario` (`id_usuario`),
   CONSTRAINT `log_erro_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-CREATE TABLE `curso_destaque` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_curso` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `id_curso` (`id_curso`),
-  CONSTRAINT `curso_destaque_ibfk_1` FOREIGN KEY (`id_curso`) REFERENCES `curso` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
