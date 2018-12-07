@@ -13,6 +13,10 @@
 
 Route::get('/', 'Home@index');
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/nossa-historia', function () {
     return view('nossa_historia');
 });
