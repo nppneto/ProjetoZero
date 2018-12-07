@@ -31,11 +31,11 @@ class CursosProfissionalizantes extends Controller
 
     public function getCursoById($id) {
 
-        $cursoById = DB::select('SELECT
+        $cursoById = DB::select("SELECT
                                         titulo,
                                         endereco,
-                                        dt_inicio,
-                                        dt_fim,
+                                        DATE_FORMAT(dt_inicio, '%d/%m/%y') AS dt_inicio,
+                                        DATE_FORMAT(dt_fim, '%d/%m/%y') AS dt_fim,
                                         horario_inicio,
                                         horario_fim,
                                         periodo,
@@ -43,7 +43,7 @@ class CursosProfissionalizantes extends Controller
                                         valor
                                     FROM
                                         curso
-                                    WHERE id = :id', [':id' => $id]);
+                                    WHERE id = :id", [':id' => $id]);
             
 
         return view('detalhes', ['cursos' => $cursoById]);
