@@ -32,7 +32,7 @@
                                 <p class="card-content-body">{{ $destaque->txt_destaque }}</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm"><a href="cursos/{{ $destaque->id }}">Saiba mais</a></button>
+                                        <a  class="btn btn-sm" href="cursos/{{ $destaque->id }}">Saiba mais</a>
                                     </div>
                                     {{-- <small class="text-muted">Em alta</small> --}}
                                 </div>
@@ -45,15 +45,62 @@
 
         <section class="row">
             <div class="depoimentos">
-                <section>
-                    <div class="depoimento"></div>
-                </section>
+                    <div id="carouselContent" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active text-center p-4">
+                                     <p>lorem ipsum (imagine longer text)</p>
+                                </div>
+                                <div class="carousel-item text-center p-4">
+                                    
+                                    <p>lorem ipsum (imagine longer text)</p>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselContent" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselContent" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
             </div>
         </section>
 
-        <div class="inf_table_cursos">
-            
+        <div class="row">
+            <div class="container">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2">Larry the Bird</td>
+                            <td>@twitter</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> 
         </div>
+
     </section>
 </main>
     
