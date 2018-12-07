@@ -8,21 +8,14 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="shortcut icon" type="image/x-icon" href="/images/gestor.ico">
     <title>@yield('title')</title>
-
-    <style>
-
-    </style>
-
 </head>
 
 <body>
-
-    <!-- <img src="assets/images/gestor.png" alt="" srcset=""> -->
-
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="/">
             <img src="/images/gestor.png" width="30" height="30" alt="">
         </a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -30,7 +23,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="/">Página Inicial <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
@@ -80,23 +73,15 @@
     @yield('content')
 
     <footer>
-        <div class="footer">
-            <ul>
-                <li>Compre Nossos Cursos</li>
-                <li>Fale Conosco</li>
-                <li>Trabalhe Conosco</li>
-            </ul>
-        </div>
+        <ul>
+            <li>Compre Nossos Cursos</li>
+            <li>Fale Conosco</li>
+            <li>Trabalhe Conosco</li>
+        </ul>
     </footer>
 
 
 <script src="{{ mix('/js/app.js') }}"></script>
-
-    <script>
-        // $('.carousel').carousel({
-        // 	interval: 5000
-        // })
-    </script>
 </body>
 
 </html>

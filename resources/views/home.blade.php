@@ -1,23 +1,48 @@
 @extends('layouts.app')
-
 @section('title', 'Gestor - Administração Empresarial e Consultoria Condominial')
-
 @section('content')
 
 <div class="faixa-sup">
+    <div class="img_blank">
+        <img src="images/gestor_blank.png" alt="">
+    </div>
+    <p>Gestor é: </p>
 </div>
 
 <section class="faixa-inf">
-    <div class="container">
-        <a href="">Saiba mais sobre os nossos curso:</a>
+    <div class="mensagem">
+        <div class="container">
+            <p>Ultimas notícias: <span style="color: red;">Em breve curso de administração sindical.</span></p>
+        </div>
     </div>
 </section>
 
-<div class="container">
+<main class="container">
+    <section>
+        <section class="cursos_destaque">
+            <header>
+                    <h3>Cursos em destaque</h3>
+            </header>
 
-    <h2>Cursos em Alta</h2>
+            <article></article>
+            <article></article>
+            <article></article>
+        </section>
 
-    <div class="album py-5 bg-light">
+        <div class="depoimentos">
+            <section>
+                <div class="depoimento"></div>
+            </section>
+        </div>
+
+        <div class="inf_table_cursos">
+            
+        </div>
+    </section>
+</main>
+    
+
+    {{-- <div class="album py-5 bg-light">
         <div class="container">
                 <div class="row">
                 @foreach ($cursosDestaque as $destaque)
@@ -102,5 +127,5 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </div> --}}
 @endsection
