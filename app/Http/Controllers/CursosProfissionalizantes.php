@@ -41,12 +41,12 @@ class CursosProfissionalizantes extends Controller
                                         periodo,
                                         descricao,
                                         valor
-                                FROM
-                                    curso
-                                WHERE id = :id', [':id' => $id]);
-        
+                                    FROM
+                                        curso
+                                    WHERE id = :id', [':id' => $id]);
+            
 
-        return view('detalhes', ['curso' => $cursoById]);
+        return view('detalhes', ['cursos' => $cursoById]);
     }
 
 //Fim do Controller
