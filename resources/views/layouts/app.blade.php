@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <link rel="shortcut icon" type="image/x-icon" href="images/gestor.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/gestor.ico">
     <title>@yield('title')</title>
 
     <style>
@@ -21,7 +21,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="/">
-            <img src="images/gestor.png" width="30" height="30" alt="">
+            <img src="/images/gestor.png" width="30" height="30" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,7 +65,7 @@
                         Educação
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="cursos">Cursos Profissionalizantes</a>
+                        <a class="dropdown-item" href="/cursos">Cursos Profissionalizantes</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="palestras">Palestras</a>
                     </div>

@@ -17,7 +17,7 @@
         </div>
         <div class="form-group col-6">
             <label for="inputAssunto">Assunto:</label>
-            <input type="text" class="form-control" id="inputAssunto" placeholder="" value="Solicito informações referentes ao Curso {{ $assuntos[0]->titulo }}">
+            <input type="text" class="form-control" id="inputAssunto" placeholder="" value="Solicito informações referentes ao Curso: {{ $assuntos[0]->titulo }}">
         </div>
         <div class="form-group col-4">
             <label for="inputComentario">Informações Adicionais:</label>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Cursos Profissionalizantes')
+@section('title', 'Cursos Disponíveis')
 
 @section('content')
 
@@ -15,7 +15,7 @@
                             alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="images/imagem2.jpg"
                             data-holder-rendered="true"> --}}
                         <div class="card-body">
-                            <p class="card-text">{{ $curso->titulo }}</p>
+                            <p class="card-text"><strong>{{ $curso->titulo }}</strong></p>
                             <p class="card-text">{{ $curso->descricao }}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
