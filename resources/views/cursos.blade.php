@@ -19,7 +19,7 @@
                             <p class="card-text">{{ $curso->descricao }}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="cursos-profissionalizantes/detalhes/{{ $curso->id }}">Detalhes</a></button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="cursos/{{ $curso->id }}">Detalhes</a></button>
                                 </div>
                                 {{-- <small class="text-muted">Em alta</small> --}}
                             </div>
