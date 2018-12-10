@@ -4,7 +4,8 @@
         <meta charset="UTF-8">
         <title>@yield('title')</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-        <link href="{{ mix("css/admin/admin.css") }}" rel="stylesheet" type="text/css" />        
+        <link href="{{ mix("css/admin/admin.css") }}" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" type="image/x-icon" href="/images/gestor.ico">   
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -17,7 +18,8 @@
         <!-- Main Header -->
         <header class="main-header">
             <!-- Logo -->
-            <a href="index2.html" class="logo"><b>Admin</b>LTE</a>
+            {{-- <a href="index2.html" class="logo"><b>Gestor</b>ADMIN</a> --}}
+            <img class="logo" src="/images/gestor.png" width="30" height="30" alt="">
             <!-- Header Navbar -->
             <nav class="navbar navbar-static-top" role="navigation">
                 <!-- Sidebar toggle button-->
@@ -195,15 +197,15 @@
                 <ul class="sidebar-menu">
                     <li class="header">HEADER</li>
                     <!-- Optionally, you can add icons to the links -->
-                    <li class="active"><a href="#"><span>Link</span></a></li>
-                    <li><a href="#"><span>Another Link</span></a></li>
-                    <li class="treeview">
+                    <li class="active"><a href="/manager/paginas"><span>Páginas</span></a></li>
+                    <li><a href="/manager/cursos"><span>Cursos</span></a></li>
+                    {{-- <li class="treeview">
                         <a href="#"><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
                         <ul class="treeview-menu">
                             <li><a href="#">Link in level 2</a></li>
                             <li><a href="#">Link in level 2</a></li>
                         </ul>
-                    </li>
+                    </li> --}}
                 </ul><!-- /.sidebar-menu -->
             </section>
             <!-- /.sidebar -->
@@ -212,8 +214,8 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <h1>
+            {{-- <section class="content-header">
+                 <h1>
                     Page Header
                     <small>Optional description</small>
                 </h1>
@@ -221,12 +223,12 @@
                     <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
                     <li class="active">Here</li>
                 </ol>
-            </section>
+            </section> --}}
 
             <!-- Main content -->
             <section class="content">
 
-                <!-- Your Page Content Here -->
+                @yield('content')
 
             </section><!-- /.content -->
         </div><!-- /.content-wrapper -->

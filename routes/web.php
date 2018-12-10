@@ -11,7 +11,7 @@
 |
 */
 
-//PÁGINAS DINÂMICAS
+//PÁGINAS DINÂMICAS -> Usuário
 Route::get('/', 'HomeController@index'); // Select página inicial -> Cursos e CursosDestaque
 
 Route::get('/cursos', 'CursoController@index'); // Select página Cursos - Todos os Cursos
@@ -21,10 +21,21 @@ Route::get('/cursos/{id}', 'CursoController@getCursoById'); // Select página De
 Route::get('/contato/{id}', 'CursoController@getAssuntoOrcamento'); // Select página Contato - Curso por ID (Formulário)
 
 Route::post('/contato', 'ContatoController@getDataFormContato');
+// ----------------------------------------------------------------
+
+//PÁGINAS DINÂMICAS -> ADMIN
+
+Route::get('/manager', 'ManagerController@index');
+
+Route::get('/manager/paginas', function () {
+    return view('admin.paginas');
+});
+
+Route::get('/manager/cursos', 'ManagerController@getCursos');
 
 
 
-//PÁGINAS ESTÁTICAS
+//PÁGINAS ESTÁTICAS -> Usuário
 Route::get('/historia', function () {
     return view('historia');
 });
@@ -64,3 +75,4 @@ Route::get('/palestras', function () {
 Route::get('/galeria', function () {
     return view('galeria');
 });
+
