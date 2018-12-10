@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
-@section('name', 'Consultoria')
+@section('title', 'Consultoria')
 
 @section('content')
-    
+
+<a class="btn btn-primary" href="/">Voltar</a>
+
 @endsection
