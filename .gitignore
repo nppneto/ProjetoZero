@@ -7,6 +7,11 @@
 /public/js/*.*
 /public/css/*.*
 /public/images/
+/public/css/admin/fonts/*.*
+/public/js/admin/*.*
+/public/fonts/vendor/*.*
+/public/fonts/
+/public/css/
 /vendor
 /.idea
 /.vscode
