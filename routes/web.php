@@ -12,13 +12,13 @@
 */
 
 //PÁGINAS DINÂMICAS
-Route::get('/', 'Home@index');
+Route::get('/', 'HomeController@index');
 
-Route::get('/cursos', 'CursosProfissionalizantes@index');
+Route::get('/cursos', 'CursoController@index');
 
-Route::get('/cursos/{id}', 'CursosProfissionalizantes@getCursoById');
+Route::get('/cursos/{id}', 'CursoController@getCursoById');
 
-Route::get('/contato/{id}', 'CursosProfissionalizantes@getAssuntoOrcamento');
+Route::get('/contato/{id}', 'CursoController@getAssuntoOrcamento');
 
 
 
