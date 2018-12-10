@@ -12,13 +12,13 @@
 */
 
 //PÁGINAS DINÂMICAS
-Route::get('/', 'Home@index');
+Route::get('/', 'HomeController@index'); // Select página inicial -> Cursos e CursosDestaque
 
-Route::get('/cursos', 'CursosProfissionalizantes@index');
+Route::get('/cursos', 'CursoController@index'); // Select página Cursos - Todos os Cursos
 
-Route::get('/cursos/{id}', 'CursosProfissionalizantes@getCursoById');
+Route::get('/cursos/{id}', 'CursoController@getCursoById'); // Select página Detalhes - Cursos por ID
 
-Route::get('/contato/{id}', 'CursosProfissionalizantes@getAssuntoOrcamento');
+Route::get('/contato/{id}', 'CursoController@getAssuntoOrcamento'); // Select página Contato - Curso por ID (Formulário)
 
 
 

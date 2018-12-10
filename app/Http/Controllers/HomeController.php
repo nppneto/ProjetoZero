@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
-class Home extends Controller
+class HomeController extends Controller
 {
     
     public function index() {
 
-        $cursos = DB::select("SELECT 
+        $cursos = DB::select("SELECT
+                                    id,
                                     titulo,
                                     endereco,
                                     DATE_FORMAT(dt_inicio, '%d/%m/%y') AS dt_inicio,

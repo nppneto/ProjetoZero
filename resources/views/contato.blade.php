@@ -27,6 +27,7 @@
         </div>
         <div class="form-group col-4">
             <button type="submit" class="btn btn-primary">Enviar</button>
+            <a class="btn btn-primary" href="/cursos/{{ $assuntos[0]->id }}">Voltar</a>
         </div>
     </form>
     
