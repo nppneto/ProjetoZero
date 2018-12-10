@@ -13729,8 +13729,8 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(11);
-__webpack_require__(38);
-module.exports = __webpack_require__(39);
+__webpack_require__(39);
+module.exports = __webpack_require__(40);
 
 
 /***/ }),
@@ -13746,6 +13746,7 @@ module.exports = __webpack_require__(39);
 
 __webpack_require__(12);
 __webpack_require__(36);
+__webpack_require__(38);
 
 // window.Vue = require('vue');
 
@@ -13808,7 +13809,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  * a simple convenience so we don't have to attach every token manually.
  */
 
-var token = document.head.querySelector('meta[name="csrf-token"]');
+var token = document.querySelector('input[name="_token"]');
 
 if (token) {
   window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
@@ -36658,10 +36659,40 @@ writer.type('Gestor é administração').rest(500).changeOps({ deleteSpeed: 80 }
 /* 38 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+window.document.getElementById('formContato').addEventListener('submit', function (e) {
+
+    e.preventDefault();
+
+    var form = {
+        'nome': window.document.getElementById('inputNome').value,
+        'email': window.document.getElementById('inputEmail').value,
+        'assunto': window.document.getElementById('inputAssunto').value,
+        'comentario': window.document.getElementById('inputComentario').value
+    };
+
+    console.log(form);
+    return false;
+
+    $.ajax({
+        method: 'post',
+        async: true,
+        url: '/contato',
+        data: form
+    }).done(function (e) {
+        console.log(e);
+    }).fail(function (e) {
+        console.log(e);
+    });
+});
 
 /***/ }),
 /* 39 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 40 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

@@ -7,6 +7,7 @@
 
 require('./bootstrap');
 require('./typing.js');
+require('./ajaxFormContato');
 
 
 // window.Vue = require('vue');

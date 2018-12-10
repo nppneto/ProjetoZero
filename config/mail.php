@@ -133,4 +133,10 @@ return [
 
     'log_channel' => env('MAIL_LOG_CHANNEL'),
 
+    // MailGun
+    // 'mailgun' => [
+    //     'domain' => 'sandboxe72c9c13545a45a398c307486f0a160e.mailgun.org',
+    //     'secret' => 'f5d402ddf92ef10924e020a8dc3eb79b-b3780ee5-fedcffff',
+    // ],
+
 ];

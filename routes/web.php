@@ -20,6 +20,8 @@ Route::get('/cursos/{id}', 'CursoController@getCursoById'); // Select página De
 
 Route::get('/contato/{id}', 'CursoController@getAssuntoOrcamento'); // Select página Contato - Curso por ID (Formulário)
 
+Route::post('/contato', 'ContatoController@getDataFormContato');
+
 
 
 //PÁGINAS ESTÁTICAS

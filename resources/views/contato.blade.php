@@ -6,7 +6,8 @@
 
     <h2>Contato</h2>
 
-    <form class="container">
+    <form id="formContato" class="container" method="POST">
+        @csrf
         <div class="form-group col-6">
             <label for="inputNome">Nome:</label>
             <input type="text" class="form-control" id="inputNome" placeholder="Nome...">
