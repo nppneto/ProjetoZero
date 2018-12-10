@@ -1,13 +1,8 @@
 @extends('layouts.app')
-
 @section('title', 'Contato')
-
 @section('content')
-
     <h2>Contato</h2>
-
-    <form id="formContato" class="container" method="POST">
-        @csrf
+    <form id="formContato" class="form">
         <div class="form-group col-6">
             <label for="inputNome">Nome:</label>
             <input type="text" class="form-control" id="inputNome" placeholder="Nome...">
@@ -27,9 +22,9 @@
             </div>
         </div>
         <div class="form-group col-4">
-            <button type="submit" class="btn btn-primary">Enviar</button>
-            <a class="btn btn-primary" href="/cursos/{{ $assuntos[0]->id }}">Voltar</a>
+            <button class="btn btn-primary" id="ajaxSubmit">Enviar</button>
+
+            {{-- <a class="btn btn-primary" href="/cursos/{{ $assuntos[0]->id }}">Voltar</a> --}}
         </div>
     </form>
-    
 @endsection

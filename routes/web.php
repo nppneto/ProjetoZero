@@ -64,3 +64,9 @@ Route::get('/palestras', function () {
 Route::get('/galeria', function () {
     return view('galeria');
 });
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+

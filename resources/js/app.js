@@ -6,7 +6,7 @@
  */
 
 require('./bootstrap');
-require('./typing.js');
+require('./typing');
 require('./ajaxFormContato');
 
 

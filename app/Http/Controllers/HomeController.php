@@ -1,15 +1,28 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
-    
-    public function index() {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        //$this->middleware('auth');
+    }
 
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
         $cursos = DB::select("SELECT
                                     id,
                                     titulo,
@@ -21,24 +34,12 @@ class HomeController extends Controller
                                     periodo,
                                     descricao,
                                     valor 
-                                FROM 
-                                    curso 
-                                WHERE ativo = 1");
+                            FROM 
+                                curso 
+                            WHERE ativo = 1");
 
-        $cursosDestaque = DB::select('SELECT 
-                                            id,
-                                            titulo,
-                                            txt_destaque
-                                        FROM
-                                            curso
-                                        WHERE destaque = 1
-                                        LIMIT 3');
+        $cursosDestaque = DB::select('SELECT id, titulo, txt_destaque FROM curso WHERE destaque = 1 LIMIT 3');
 
-        return view('home', [
-            'cursos' => $cursos,
-            'destaques' => $cursosDestaque
-        ]);
+    return view('home', ['cursos' => $cursos, 'destaques' => $cursosDestaque ]);
     }
-
-//Fim do Controller
 }
