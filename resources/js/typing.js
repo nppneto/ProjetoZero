@@ -1,10 +1,10 @@
 import Typewriter from 't-writer.js'
 
-const target = document.querySelector('.tw')
+const target = document.querySelector('.tw');
 const options = {
   loop: true,
   typeColor: 'White'
-}
+};
 
 const writer = new Typewriter(target, options);
 writer
@@ -19,4 +19,4 @@ writer
   .type('palestra')
   .rest(500)
   .clear()
-  .start()
+  .start();

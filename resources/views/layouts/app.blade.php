@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="shortcut icon" type="image/x-icon" href="/images/gestor.ico">
     <title>@yield('title')</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}" >
 </head>
 
 <body>

@@ -1,28 +1,20 @@
-window.document.getElementById('formContato').addEventListener('submit', function(e) {
-
+document.querySelector('#formContato').addEventListener('submit', function(e){
     e.preventDefault();
+    
+    const formData = new FormData();
+    formData.append('nome', window.document.getElementById('inputNome').value);
+    formData.append('email', window.document.getElementById('inputEmail').value);
+    formData.append('assunto', window.document.getElementById('inputAssunto').value);
+    formData.append('comentario', window.document.getElementById('inputComentario').value);
 
-    const form = {
-        'nome': window.document.getElementById('inputNome').value,
-        'email': window.document.getElementById('inputEmail').value,
-        'assunto': window.document.getElementById('inputAssunto').value,
-        'comentario': window.document.getElementById('inputComentario').value
-    };
+    const _header = new Headers({ "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr('content') });
+    console.log(_header);
 
-    console.log(form);
-    return false;
-
-    $.ajax({
-        method: 'post',
-        async: true,
-        url: '/contato',
-        data: form
+    fetch('/contato',{
+        method: 'POST',
+        headers: _header
     })
-    .done(e => {
-        console.log(e);
-    })
-    .fail(e => {
-        console.log(e);
-    });
-
+    .then(response => response.json())
+    .then(result => {console.log(result)})
+    .catch(err => console.error(err));
 });
