@@ -25,19 +25,24 @@ Route::post('/contato', 'ContatoController@getDataFormContato')->name('contato.c
 
 //PÁGINAS DINÂMICAS -> ADMIN
 
-Route::get('/manager', 'ManagerController@index')->name('manager.index');
+Route::get('manager', 'ManagerController@index')->name('manager.index');
+Route::get('manager/cursos', 'ManagerController@getCursos')->name('cursos.index');
+// Route::post('manager/cursos', 'ManagerController@store')->name('cursos.store');
+// Route::get('manager/cursos/create', 'ManagerController@create')->name('cursos.create');
+Route::get('manager/cursos/{curso}/edit', 'ManagerController@edit')->name('cursos.edit');
+Route::patch('manager/cursos/{curso}', 'ManagerController@update')->name('cursos.update');
+Route::put('manager/cursos/{curso}', 'ManagerController@update')->name('cursos.update');
+// Route::delete('manager/cursos/{contato}', 'ManagerController@destroy')->name('cursos.destroy'); //--> usar para desativar curso
 
 Route::get('/manager/paginas', function () {
     return view('admin.paginas');
-})->name('manager.paginas');
-
-Route::get('/manager/cursos', 'ManagerController@getCursos')->name('manager.index');
+})->name('paginas.index');
 
 
 //PÁGINAS ESTÁTICAS -> Usuário
 Route::get('/historia', function () {
     return view('historia');
-})->name('historio.index');
+})->name('historia.index');
 
 Route::get('/missao', function () {
     return view('missao');
