@@ -6,7 +6,6 @@
 
     <h2>Contato</h2>
     <form id="formContato" class="form" method="POST" >
-        @csrf
         <div class="form-group col-6">
             <label for="inputNome">Nome:</label>
             <input type="text" class="form-control" id="inputNome" placeholder="Nome...">
@@ -27,8 +26,12 @@
         </div>
         <div class="form-group col-4">
             <button class="btn btn-primary" id="ajaxSubmit">Enviar</button>
+            <input type="button" value="Enviar" onclick="enviar()">
             <a class="btn btn-primary" href="/cursos/{{ $assuntos[0]->id }}">Voltar</a>
         </div>
     </form>
+@endsection
 
+@section('script')
+<script src="{{ mix("js/all.js") }}"></script>
 @endsection

@@ -154,45 +154,8 @@
             <!--social_footer_ul ends here-->
         </div>
     </footer>
-{{-- 
-    <div class="section-footer">
-        <div class="container">
-            <div class="footer-b1">
-                <img src="" alt="">
-                <small>Copyright © 2017 Gestor</small>
-            </div>
-
-            <div class="footer-b2">
-                <div class="fmapa-b1">
-                    <h3><a href="">Compre nossos curso</a></h3>
-                    <ul>
-                        <li><a href="Sobre">Sobre o negócio</a></li>
-                        <li><a href="">Link</a></li>
-                        <li><a href="">Link</a></li>
-                    </ul>
-                </div>
-
-                <div class="fmapa-b1">
-                    <h3><a href="">Fale Conosco</a></h3>
-                    <ul>
-                        <li><a href="">Link</a></li>
-                        <li><a href="">Link</a></li>
-                    </ul>
-                </div>
-
-                <div class="fmapa-b1">
-                    <h3><a href="">Trabalhe Conosco</a></h3>
-                    <ul>
-                        <li><a href="">Link</a></li>
-                        <li><a href="">Link</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-	</div> --}}
-
-
 <script src="{{ mix('/js/app.js') }}"></script>
+@yield('script')
 </body>
 
 </html>
