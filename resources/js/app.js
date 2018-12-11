@@ -6,9 +6,7 @@
  */
 
 import './bootstrap';
-import './typing';
-
-
+import './home';
 // window.Vue = require('vue');
 
 /**

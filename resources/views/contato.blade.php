@@ -25,13 +25,12 @@
             </div>
         </div>
         <div class="form-group col-4">
-            <button class="btn btn-primary" id="ajaxSubmit">Enviar</button>
-            <input type="button" value="Enviar" onclick="enviar()">
+            <button class="btn btn-primary" type="submit">Enviar</button>
             <a class="btn btn-primary" href="/cursos/{{ $assuntos[0]->id }}">Voltar</a>
         </div>
     </form>
 @endsection
 
 @section('script')
-<script src="{{ mix("js/all.js") }}"></script>
+<script src="{{ mix("js/contato.js") }}"></script>
 @endsection

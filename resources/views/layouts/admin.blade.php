@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>@yield('title')</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-        <link href="{{ mix("css/admin/admin.css") }}" rel="stylesheet" type="text/css" />
+        <link href="{{ mix("css/admin.css") }}" rel="stylesheet" type="text/css" />
         <link rel="shortcut icon" type="image/x-icon" href="/images/gestor.ico">   
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -246,6 +246,6 @@
     </div><!-- ./wrapper -->
 
     <!-- REQUIRED JS SCRIPTS -->
-    <script src="{{ mix ("js/admin/admin.js") }}" type="text/javascript"></script>
+    <script src="{{ mix ("js/admin.js") }}" type="text/javascript"></script>
     </body>
 </html>

@@ -1,18 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/css/admin/admin.css": "/css/admin/admin.css",
-    "/js/admin/admin.js": "/js/admin/admin.js",
-    "/js/all.js": "/js/all.js",
-    "/css/admin/fonts/ionicons.eot": "/css/admin/fonts/ionicons.eot",
-    "/css/admin/fonts/ionicons.svg": "/css/admin/fonts/ionicons.svg",
-    "/css/admin/fonts/ionicons.ttf": "/css/admin/fonts/ionicons.ttf",
-    "/css/admin/fonts/ionicons.woff": "/css/admin/fonts/ionicons.woff",
-    "/css/admin/fonts/ionicons.woff2": "/css/admin/fonts/ionicons.woff2",
-    "/css/admin/fonts/fontawesome-webfont.eot": "/css/admin/fonts/fontawesome-webfont.eot",
-    "/css/admin/fonts/fontawesome-webfont.svg": "/css/admin/fonts/fontawesome-webfont.svg",
-    "/css/admin/fonts/fontawesome-webfont.ttf": "/css/admin/fonts/fontawesome-webfont.ttf",
-    "/css/admin/fonts/fontawesome-webfont.woff": "/css/admin/fonts/fontawesome-webfont.woff",
-    "/css/admin/fonts/fontawesome-webfont.woff2": "/css/admin/fonts/fontawesome-webfont.woff2",
-    "/css/admin/fonts/FontAwesome.otf": "/css/admin/fonts/FontAwesome.otf"
+    "/css/admin.css": "/css/admin.css",
+    "/js/admin.js": "/js/admin.js",
+    "/js/contato.js": "/js/contato.js"
 }
