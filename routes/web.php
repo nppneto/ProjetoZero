@@ -11,72 +11,62 @@
 |
 */
 
-//PÁGINAS DINÂMICAS -> Usuário
-Route::get('/', 'HomeController@index')->name('home.index'); // Select página inicial -> Cursos e CursosDestaque
+Route::get('/', 'HomeController@index')->name('site.home');
 
-Route::get('/cursos', 'CursoController@index')->name('cursos.list'); // Select página Cursos - Todos os Cursos
+Route::get('/cursos', 'CursoController@index')->name('site.cursos');
+Route::get('/curso/{id}', 'CursoController@show')->name('site.detalhes');
 
-Route::get('/cursos/{id}', 'CursoController@getCursoById')->name('cursos.show'); // Select página Detalhes - Cursos por ID
 
-Route::get('/contato/{id}', 'CursoController@getAssuntoOrcamento')->name('contato.show'); // Select página Contato - Curso por ID (Formulário)
+Route::get('/contato/{id}', 'ContatoController@getOrcamento')->name('site.contato');
+Route::get('/contato', 'ContatoController@index')->name('site.contato');
+Route::post('/contato', 'ContatoController@sendEmail');
 
-Route::post('/contato', 'ContatoController@getDataFormContato')->name('contato.create');
+Route::get('/manager', 'ManagerController@index');
+
+Route::prefix('manager')->group(function(){
+    Route::resource('curso', 'ManagerCursoController');    
+    Route::resource('pagina', 'ManagerPaginaController');
+});
+
 // ----------------------------------------------------------------
 
-//PÁGINAS DINÂMICAS -> ADMIN
-
-Route::get('manager', 'ManagerController@index')->name('manager.index');
-Route::get('manager/cursos', 'ManagerController@getCursos')->name('cursos.index');
-// Route::post('manager/cursos', 'ManagerController@store')->name('cursos.store');
-// Route::get('manager/cursos/create', 'ManagerController@create')->name('cursos.create');
-Route::get('manager/cursos/{curso}/edit', 'ManagerController@edit')->name('cursos.edit');
-Route::patch('manager/cursos/{curso}', 'ManagerController@update')->name('cursos.update');
-Route::put('manager/cursos/{curso}', 'ManagerController@update')->name('cursos.update');
-// Route::delete('manager/cursos/{contato}', 'ManagerController@destroy')->name('cursos.destroy'); //--> usar para desativar curso
-
-Route::get('/manager/paginas', function () {
-    return view('admin.paginas');
-})->name('paginas.index');
-
-
-//PÁGINAS ESTÁTICAS -> Usuário
 Route::get('/historia', function () {
-    return view('historia');
-})->name('historia.index');
+    return view('site.historia');
+})->name('site.historia');
 
 Route::get('/missao', function () {
-    return view('missao');
-})->name('missao.index');
+    return view('site.missao');
+})->name('site.missao');
 
 Route::get('/executivo', function () {
-    return view('executivo');
-})->name('executivo.index');
+    return view('site.executivo');
+})->name('site.executivo');
 
 Route::get('/premiacao', function () {
-    return view('premiacao');
-})->name('premiacao.index');
+    return view('site.premiacao');
+})->name('site.premiacao');
 
 Route::get('/mensagens', function () {
-    return view('mensagens');
-})->name('mensagem.index');
+    return view('site.mensagens');
+})->name('site.mensagem');
 
 Route::get('/administracao', function () {
-    return view('administracao');
-})->name('administracao.index');
+    return view('site.administracao');
+})->name('site.administracao');
 
 Route::get('/consultoria', function () {
-    return view('consultoria');
-})->name('consultoria.index');
+    return view('site.consultoria');
+})->name('site.consultoria');
 
 Route::get('/assessoria', function () {
-    return view('assessoria');
-})->name('assessoria.index');
+    return view('site.assessoria');
+})->name('site.assessoria');
 
 Route::get('/palestras', function () {
-    return view('palestras');
-})->name('palestra.index');
+    return view('site.palestras');
+})->name('site.palestra');
 
 Route::get('/galeria', function () {
-    return view('galeria');
-})->name('galeria.index');
+    return view('site.galeria');
+})->name('site.galeria');
 

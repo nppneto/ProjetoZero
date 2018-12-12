@@ -32,7 +32,7 @@
                                 <p class="card-content-body">{{ $destaque->txt_destaque }}</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a  class="btn btn-sm" href="cursos/{{ $destaque->id }}">Saiba mais</a>
+                                        <a  class="btn btn-sm" href="curso/{{ $destaque->id }}">Saiba mais</a>
                                     </div>
                                     {{-- <small class="text-muted">Em alta</small> --}}
                                 </div>
@@ -81,7 +81,7 @@
                     <tbody>
                         @foreach ($cursos as $curso)
                             <tr>
-                                <th><a href="cursos/{{ $curso->id }}">{{ $curso->titulo }}</a></th>
+                                <th><a href="curso/{{ $curso->id }}">{{ $curso->titulo }}</a></th>
                                 <td>{{ $curso->endereco }}</td>
                                 <td>{{ $curso->dt_inicio }} à {{ $curso->dt_fim }}</td>
                                 <td>{{ $curso->horario_inicio }} às {{ $curso->horario_fim }}</td>

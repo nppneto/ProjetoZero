@@ -3,5 +3,7 @@
 @section('title', 'Página de Gerenciamento')
 
 @section('content')
+@endsection
 
+@section('script')
 @endsection

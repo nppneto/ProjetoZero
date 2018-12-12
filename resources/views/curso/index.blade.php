@@ -13,7 +13,7 @@
                     <h3 class="box-title">Formulário</h3>
                 </div>
                 <div class="box-body">
-                    <form role="form">
+                    <form role="form" id="frmCadastro">
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="titulo">Título:</label>
@@ -95,7 +95,7 @@
                 <tbody>
                     @foreach ($cursos as $curso)
                         <tr>
-                            <th><a href="cursos/{{ $curso->id }}/edit">{{ $curso->titulo }}</a></th>
+                            <th><a href="curso/{{ $curso->id }}/edit">{{ $curso->titulo }}</a></th>
                             <td>{{ $curso->endereco }}</td>
                             <td>{{ $curso->dt_inicio }}</td>
                             <td>{{ $curso->dt_fim }}</td>
@@ -114,5 +114,5 @@
         </div>
     </div>
 </section>
-    
+
 @endsection

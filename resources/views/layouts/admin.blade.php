@@ -197,8 +197,8 @@
                 <ul class="sidebar-menu">
                     <li class="header">HEADER</li>
                     <!-- Optionally, you can add icons to the links -->
-                    <li class="active"><a href="/manager/paginas"><span>Páginas</span></a></li>
-                    <li><a href="/manager/cursos"><span>Cursos</span></a></li>
+                    <li class="active"><a href="/manager/pagina"><span>Páginas</span></a></li>
+                    <li><a href="/manager/curso"><span>Cursos</span></a></li>
                     {{-- <li class="treeview">
                         <a href="#"><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
                         <ul class="treeview-menu">
@@ -247,5 +247,6 @@
 
     <!-- REQUIRED JS SCRIPTS -->
     <script src="{{ mix ("js/admin.js") }}" type="text/javascript"></script>
+    @yield('script')
     </body>
 </html>
