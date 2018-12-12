@@ -198,7 +198,7 @@
                 <ul class="sidebar-menu">
                     <li class="header">HEADER</li>
                     <!-- Optionally, you can add icons to the links -->
-                    <li class="active"><a href="/manager/pagina"><span>Páginas</span></a></li>
+                    <li><a href="/manager/pagina"><span>Páginas</span></a></li>
                     <li><a href="/manager/curso"><span>Cursos</span></a></li>
                     {{-- <li class="treeview">
                         <a href="#"><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
@@ -238,10 +238,10 @@
         <footer class="main-footer">
             <!-- To the right -->
             <div class="pull-right hidden-xs">
-                Anything you want
+                Developer
             </div>
             <!-- Default to the left -->
-            <strong>Copyright © 2015 <a href="#">Company</a>.</strong> All rights reserved.
+            <strong>Copyright © {{ now()->year }} <i>Gesto RH</i>.</strong> Todos os direitos reservados.
         </footer>
 
     </div><!-- ./wrapper -->

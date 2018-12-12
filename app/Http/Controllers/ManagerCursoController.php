@@ -33,7 +33,7 @@ class ManagerCursoController extends Controller
     // Não será usado
     public function create()
     {
-        //
+        return view('curso.create');
     }
 
     public function store(Request $request)
@@ -157,7 +157,7 @@ class ManagerCursoController extends Controller
                     id = :id";
 
         DB::update($query, $response);
-        return view('curso.index');
+        return redirect()->action('ManagerCursoController@index');
     }
 
     public function destroy($id)
@@ -170,7 +170,5 @@ class ManagerCursoController extends Controller
                         id = :id";
 
         DB::update($query, [':id' => $id]);
-        return view('curso.index');
-
     }
 }
