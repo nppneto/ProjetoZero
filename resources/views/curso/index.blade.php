@@ -114,5 +114,12 @@
         </div>
     </div>
 </section>
-
+@section('script')
+<script>
+    window.document.querySelector('#frmCadastro').addEventListener('submit', function(e){
+        let classCurso = new ClassCurso();
+        classCurso.save(e, document.querySelector('meta[name="csrf-token"]').attributes.content.value);
+    });
+</script>
+@endsection
 @endsection
