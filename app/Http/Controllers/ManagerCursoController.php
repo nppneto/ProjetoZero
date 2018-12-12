@@ -85,6 +85,7 @@ class ManagerCursoController extends Controller
                             ':txt_destaque')";
         
         DB::insert($query, $response);
+        return view('curso.index');
     }
 
     public function show($id)
