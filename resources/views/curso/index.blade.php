@@ -10,7 +10,7 @@
         <div class="col-md-12">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Formulário</h3>
+                    <h3 class="box-title">Cadastrar</h3>
                 </div>
                 <div class="box-body">
                     <form role="form" id="frmCadastro">
@@ -42,6 +42,7 @@
                             <div class="form-group">
                                 <label for="periodo">Período</label>
                                 <select class="form-control" name="periodo" id="inputPeriodo">
+                                    <option disabled selected value="">Escolha o período...</option>
                                     <option value="MANHÃ">MANHÃ</option>
                                     <option value="NOITE">NOITE</option>
                                 </select>
@@ -85,7 +86,7 @@
                         <th scope="col">H-Fim</th>
                         <th scope="col">Período</th>
                         {{-- <th scope="col">Descrição</th> --}}
-                        <th scope="col">Ativo</th>
+                        {{-- <th scope="col">Ativo</th> --}}
                         <th scope="col">Preço</th>
                         <th scope="col">Destaque</th>
                         <th scope="col">Disponível</th>
@@ -102,7 +103,7 @@
                             <td>{{ $curso->horario_inicio }}</td>
                             <td>{{ $curso->horario_fim }}</td>
                             <td>{{ $curso->periodo }}</td>
-                            <td>{{ $curso->ativo }}</td>
+                            {{-- <td>{{ $curso->ativo }}</td> --}}
                             <td>{{ $curso->valor }}</td>
                             <td>{{ $curso->destaque }}</td>
                             <td>{{ $curso->disponivel }}</td>
