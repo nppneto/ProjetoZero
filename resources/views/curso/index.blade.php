@@ -72,7 +72,7 @@
         <div class="col-md-12">
         <div class="box">
             <div class="box-header with-border">
-            <h3 class="box-title">Cursos</h3>
+            <h3 class="box-title">Todos os Cursos</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -90,13 +90,14 @@
                         <th scope="col">Preço</th>
                         <th scope="col">Destaque</th>
                         <th scope="col">Disponível</th>
+                        <th scope="col">Opções</th>
                         {{-- <th scope="col">Texto de Destaque</th> --}}
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($cursos as $curso)
                         <tr>
-                            <th><a href="curso/{{ $curso->id }}/edit">{{ $curso->titulo }}</a></th>
+                            <td>{{ $curso->titulo }}</td>
                             <td>{{ $curso->endereco }}</td>
                             <td>{{ $curso->dt_inicio }}</td>
                             <td>{{ $curso->dt_fim }}</td>
@@ -105,9 +106,13 @@
                             <td>{{ $curso->periodo }}</td>
                             {{-- <td>{{ $curso->ativo }}</td> --}}
                             <td>{{ $curso->valor }}</td>
-                            <td>{{ $curso->destaque }}</td>
-                            <td>{{ $curso->disponivel }}</td>
+                            <td>{{ ($curso->destaque === 1) ? 'Sim' : 'Não' }}</td>
+                            <td>{{ ($curso->disponivel === 1) ? 'Sim' : 'Não' }}</td>
                             {{-- <td>{{ $curso->txt_destaque }}</td> --}}
+                            <td>
+                                <a href="curso/{{ $curso->id }}/edit" type="button" class="btn btn-primary btn-xs">Editar</a>
+                                <a href="curso/{{ $curso->id }}" type="button" class="btn btn-danger btn-xs">Excluir</a>
+                            </td>
                         </tr>
                     @endforeach
                 </table>
