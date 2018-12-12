@@ -19,7 +19,6 @@ class ManagerCursoController extends Controller
                         horario_fim,
                         periodo,
                         descricao,
-                        ativo,
                         destaque,
                         disponivel,
                         valor 
@@ -31,6 +30,7 @@ class ManagerCursoController extends Controller
         return view('curso.index', [ 'cursos' => $cursos ]);
     }
 
+    // Não será usado
     public function create()
     {
         //
@@ -38,7 +38,54 @@ class ManagerCursoController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $response = array(
+            ':titulo' => $request->titulo,
+            ':endereco' => $request->endereco,
+            ':dt_inicio' => $request->dt_inicio,
+            ':dt_fim' => $request->dt_fim,
+            ':horario_inicio' => $request->horario_inicio,
+            ':horario_fim' => $request->horario_fim,
+            ':periodo' => $request->periodo,
+            ':descricao' => $request->descricao,
+            ':ativo' => 1,
+            ':valor' => $request->valor,
+            ':destaque' => 0,
+            ':disponivel' => 0,
+            ':txt_destaque' => $request->txt_destaque
+        );
+
+        $query = "INSERT INTO 
+                            curso (
+                                titulo, 
+                                endereco, 
+                                dt_inicio, 
+                                dt_fim, 
+                                horario_inicio, 
+                                horario_fim, 
+                                periodo, 
+                                descricao, 
+                                ativo, 
+                                valor, 
+                                destaque, 
+                                disponivel, 
+                                txt_destaque)
+                    VALUES(
+                            ':titulo', 
+                            ':endereco', 
+                            ':dt_inicio', 
+                            ':dt_fim', 
+                            ':horario_inicio', 
+                            ':horario_fim', 
+                            ':periodo', 
+                            ':descricao', 
+                            ':ativo', 
+                            ':valor', 
+                            ':destaque', 
+                            ':disponivel', 
+                            ':txt_destaque')";
+        
+        DB::insert($query, $response);
+        return view('curso.index');
     }
 
     public function show($id)
@@ -114,6 +161,13 @@ class ManagerCursoController extends Controller
 
     public function destroy($id)
     {
-        //
+        $query = "UPDATE
+                        curso 
+                    SET
+                        ativo = 0
+                    WHERE
+                        id = :id";
+
+        $curso = DB::update($query, [':id' => $id]);
     }
 }
