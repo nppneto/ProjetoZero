@@ -13,10 +13,10 @@ class ManagerCursoController extends Controller
                         id,
                         titulo,
                         endereco,
-                        dt_inicio,
-                        dt_fim,
-                        horario_inicio,
-                        horario_fim,
+                        DATE_FORMAT(dt_inicio, '%d/%m/%y') AS dt_inicio,
+                        DATE_FORMAT(dt_fim, '%d/%m/%y') AS dt_fim,
+                        TIME_FORMAT(horario_inicio, '%H:%i') AS horario_inicio,
+                        TIME_FORMAT(horario_fim, '%H:%i') AS horario_fim,
                         periodo,
                         descricao,
                         destaque,
@@ -70,19 +70,19 @@ class ManagerCursoController extends Controller
                                 disponivel, 
                                 txt_destaque)
                     VALUES(
-                            ':titulo', 
-                            ':endereco', 
-                            ':dt_inicio', 
-                            ':dt_fim', 
-                            ':horario_inicio', 
-                            ':horario_fim', 
-                            ':periodo', 
-                            ':descricao', 
-                            ':ativo', 
-                            ':valor', 
-                            ':destaque', 
-                            ':disponivel', 
-                            ':txt_destaque')";
+                            :titulo, 
+                            :endereco, 
+                            :dt_inicio, 
+                            :dt_fim, 
+                            :horario_inicio, 
+                            :horario_fim, 
+                            :periodo, 
+                            :descricao, 
+                            :ativo, 
+                            :valor, 
+                            :destaque, 
+                            :disponivel, 
+                            :txt_destaque)";
         
         DB::insert($query, $response);
         return view('curso.index');
@@ -157,6 +157,7 @@ class ManagerCursoController extends Controller
                     id = :id";
 
         DB::update($query, $response);
+        return view('curso.index');
     }
 
     public function destroy($id)
@@ -168,6 +169,8 @@ class ManagerCursoController extends Controller
                     WHERE
                         id = :id";
 
-        $curso = DB::update($query, [':id' => $id]);
+        DB::update($query, [':id' => $id]);
+        return view('curso.index');
+
     }
 }

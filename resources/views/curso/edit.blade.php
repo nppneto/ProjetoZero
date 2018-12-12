@@ -60,8 +60,8 @@
                                 <textarea class="form-control" name="txtDestaque" id="inputTxtDestaque" cols="30" rows="5">{{ $curso[0]->txt_destaque }}</textarea>
                             </div>
                             <div class="form-group">                                
-                                <label for="ativo">Ativo:</label>
-                                <input type="checkbox" id="chkAtivo" {{ ($curso[0]->ativo === 1) ? 'checked' : '' }}>
+                                {{-- <label for="ativo">Ativo:</label>
+                                <input type="checkbox" id="chkAtivo" {{ ($curso[0]->ativo === 1) ? 'checked' : '' }}> --}}
                                 <label for="destaque">Destaque:</label>
                                 <input type="checkbox" id="chkDestaque" {{ ($curso[0]->destaque === 1) ? 'checked' : '' }}>
                                 <label for="disponivel">Disponível:</label>
@@ -70,6 +70,7 @@
                         </div>            
                         <div class="box-footer">
                             <button type="submit" class="btn btn-primary">Atualizar</button>
+                            <a href="{{ route('curso.index') }}" type="button" class="btn btn-primary">Voltar</a>
                         </div>
                     </form>
                 </div>
