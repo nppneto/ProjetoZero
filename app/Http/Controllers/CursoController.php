@@ -18,6 +18,7 @@ class CursoController extends Controller
                         horario_fim,
                         periodo,
                         descricao,
+                        txt_destaque,
                         valor 
                   FROM 
                         curso 

@@ -30,43 +30,10 @@ Route::prefix('manager')->group(function(){
 
 // ----------------------------------------------------------------
 
-Route::get('/historia', function () {
-    return view('site.historia');
-})->name('site.historia');
+Route::get('/gestor', function(){
+    return view('site.gestor');
+})->name('site.gestor');
 
-Route::get('/missao', function () {
-    return view('site.missao');
-})->name('site.missao');
-
-Route::get('/executivo', function () {
-    return view('site.executivo');
-})->name('site.executivo');
-
-Route::get('/premiacao', function () {
-    return view('site.premiacao');
-})->name('site.premiacao');
-
-Route::get('/mensagens', function () {
-    return view('site.mensagens');
-})->name('site.mensagem');
-
-Route::get('/administracao', function () {
-    return view('site.administracao');
-})->name('site.administracao');
-
-Route::get('/consultoria', function () {
-    return view('site.consultoria');
-})->name('site.consultoria');
-
-Route::get('/assessoria', function () {
-    return view('site.assessoria');
-})->name('site.assessoria');
-
-Route::get('/palestras', function () {
-    return view('site.palestras');
-})->name('site.palestra');
-
-Route::get('/galeria', function () {
-    return view('site.galeria');
-})->name('site.galeria');
-
+Route::get('/servicos', function(){
+    return view('site.servico');
+})->name('site.servico');
