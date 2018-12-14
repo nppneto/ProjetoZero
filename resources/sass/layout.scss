@@ -1,5 +1,33 @@
 /* Layout
 *****************************************************/
+.header_page {
+    height: 94px;
+    background-color: #f8f8f8;
+
+    .box_info_contato {
+        float: right;
+
+        ul {
+            list-style: none;
+            margin: 0px;
+
+            li {
+                display: inline-block;
+                border: 1px dotted silver;
+                padding: 7px 100px 10px 20px;
+
+                h5 {
+                    margin-top: 7px;
+                    font-weight: bold;
+                }
+
+                .body_box_info {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
 
 .navbar {
     background-color: $primary;
@@ -13,8 +41,8 @@ footer {
     width: 100%;
     background-color: $primary;
     min-height: 250px;
-	padding: 10px 0px 25px 0px;
-	margin-top: 85px;
+    padding: 10px 0px 25px 0px;
+    margin-top: 85px;
 }
 
 .pt2 {
@@ -80,7 +108,7 @@ footer p {
 }
 
 .bottom_border {
-    border-bottom: 1px solid #323f45;
+    border-bottom: 1px solid #ffffff;
     padding-bottom: 20px;
 }
 
@@ -126,4 +154,8 @@ footer p {
     width: 20px;
     height: 20px;
     text-align: center;
+}
+
+.headin5_amrc > a {
+    color:#fff;
 }

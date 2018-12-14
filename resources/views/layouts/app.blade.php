@@ -12,6 +12,45 @@
 </head>
 
 <body>
+    <header class="header_page">
+        <div class="box_info_contato pull-right">
+            <ul>
+                <li>
+                    <h5>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        Santos (SP)</h5>
+                    <div class="body_box_info">
+                        <p>
+                            <b>Logradouro:</b>
+                            Av: Arnaldo de Carvalho, nº 92, Sala nº 22
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <h5>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        (13) 2102 - 3483
+                    </h5>
+                    <div class="body_box_info">
+                        <p>
+                            <b>Email:</b>
+                            gestor.lcs@gmail.com
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <h5>
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        Seg - Sex 8:00 - 18:00
+                    </h5>
+                    <div class="body_box_info">
+                        <p>
+                            <b>Fechado:</b> Finais de semana e feriados</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="/">
             <img src="/images/gestor.png" width="30" height="30" alt="">
@@ -56,7 +95,7 @@
             <div class="row">
                 <div class=" col-sm-4 col-md  col-6 col">
                     <h5 class="headin5_amrc col_white_amrc pt2">
-                        <a href="/gestor" style="color:#fff;"> A Empresa</a>
+                        <a href="/gestor"> A Empresa</a>
                     </h5>
                     <ul class="footer_ul_amrc">
                         <li><a href="/gestor">Sobre</a></li>
