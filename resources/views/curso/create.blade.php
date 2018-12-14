@@ -57,11 +57,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="txtDestaque">Texto Destaque:</label>
-                                <textarea class="form-control" name="txtDestaque" id="inputTxtDestaque" cols="30" rows="5"></textarea>
+                                <textarea class="form-control" name="txtDestaque" id="inputTxtDestaque" cols="30" rows="5" minlength="72" maxlength="144"></textarea>
                             </div>
                         </div>            
                         <div class="box-footer">
                             <button type="submit" class="btn btn-primary">Cadastrar</button>
+                            <a href="/manager/curso" type="button" class="btn btn-primary">Voltar</a> <!-- Ou href="{{ route('curso.index') }}" -->
                         </div>
                     </form>
                 </div>

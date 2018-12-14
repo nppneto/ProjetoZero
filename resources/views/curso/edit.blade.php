@@ -57,7 +57,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="txtDestaque">Texto Destaque:</label>
-                                <textarea class="form-control" name="txtDestaque" id="inputTxtDestaque" cols="30" rows="5">{{ $curso[0]->txt_destaque }}</textarea>
+                                <textarea class="form-control" name="txtDestaque" id="inputTxtDestaque" cols="30" rows="5" minlength="72" maxlength="144">{{ $curso[0]->txt_destaque }}</textarea>
                             </div>
                             <div class="form-group">                                
                                 {{-- <label for="ativo">Ativo:</label>
@@ -70,7 +70,7 @@
                         </div>            
                         <div class="box-footer">
                             <button type="submit" class="btn btn-primary">Atualizar</button>
-                            <a href="{{ route('curso.index') }}" type="button" class="btn btn-primary">Voltar</a>
+                            <a href="/manager/curso" type="button" class="btn btn-primary">Voltar</a> <!-- Ou href="{{ route('curso.index') }}" -->
                         </div>
                     </form>
                 </div>
