@@ -40,6 +40,7 @@
                     </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/cursos">Cursos Profissionalizantes</a>
+                        <a class="dropdown-item" href="/palestras">Palestras</a>
                     </div>
                 </li>
                 {{-- <li class="nav-item">
@@ -59,36 +60,32 @@
                         <a href="/gestor" style="color:#fff;"> A Empresa</a>
                     </h5>
                     <ul class="footer_ul_amrc">
-                        <li><a href="/gestor">Sobre</a></li>
+                        <li><a href="/gestor#historia">História</a></li>
                         <li><a href="/gestor#missao">Missão</a></li>
-                        <li><a href="http://kalarikendramdelhi.com">Hollow Man Montage</a></li>
-                        <li><a href="http://kalarikendramdelhi.com">Ebay & Amazon</a></li>
-                        <li><a href="http://kalarikendramdelhi.com">Hair Masking/Clipping</a></li>
-                        <li><a href="http://kalarikendramdelhi.com">Image Cropping</a></li>
+                        <li><a href="/gestor#executivo">Corpo Executivo</a></li>
+                        <li><a href="/gestor#premiacao">Premiação</a></li>
+                        <li><a href="/gestor#mensagens">Mensagens</a></li>
                     </ul>
                 </div>
 
                 <div class=" col-sm-4 col-md  col-6 col">
-                    <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+                    <h5 class="headin5_amrc col_white_amrc pt2">
+                        <a href="/servicos" style="color:#fff;">Nossos Serviços</a>
+                    </h5>
                     <ul class="footer_ul_amrc">
-                        <li><a href="http://kalarikendramdelhi.com">Image Rectoucing</a></li>
-                        <li><a href="http://kalarikendramdelhi.com">Clipping Path</a></li>
-                        <li><a href="http://kalarikendramdelhi.com">Hollow Man Montage</a></li>
-                        <li><a href="http://kalarikendramdelhi.com">Ebay & Amazon</a></li>
-                        <li><a href="http://kalarikendramdelhi.com">Hair Masking/Clipping</a></li>
-                        <li><a href="http://kalarikendramdelhi.com">Image Cropping</a></li>
+                        <li><a href="/servicos#administracao">Administração</a></li>
+                        <li><a href="/servicos#consultoria">Consultoria</a></li>
+                        <li><a href="/servicos#assessoria">Assessoria</a></li>
                     </ul>
                 </div>
 
                 <div class=" col-sm-4 col-md  col-6 col">
-                    <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+                    <h5 class="headin5_amrc col_white_amrc pt2">
+                        <a href="" style="color:#fff;">Educação</a>
+                    </h5>
                     <ul class="footer_ul_amrc">
-                        <li><a href="http://kalarikendramdelhi.com">Remove Background</a></li>
-                        <li><a href="http://kalarikendramdelhi.com">Shadows & Mirror Reflection</a></li>
-                        <li><a href="http://kalarikendramdelhi.com">Logo Design</a></li>
-                        <li><a href="http://kalarikendramdelhi.com">Vectorization</a></li>
-                        <li><a href="http://kalarikendramdelhi.com">Hair Masking/Clipping</a></li>
-                        <li><a href="http://kalarikendramdelhi.com">Image Cropping</a></li>
+                        <li><a href="/cursos">Cursos Profissionalizantes</a></li>
+                        <li><a href="/palestras">Palestras</a></li>
                     </ul>
                 </div>
 
