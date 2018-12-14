@@ -1,0 +1,17 @@
+.faixa_azul {
+    background-color: $primary;
+    padding-bottom: 35px;
+    padding-top: 35px;
+    .container {
+        header {
+            h3 { color: #fff;}
+        }
+        .lead { color: #fff; }
+        img {
+            margin-top: 21px;
+            margin-right: 15px;
+            border-radius: 50%;
+            float: left;
+        }
+    }
+}

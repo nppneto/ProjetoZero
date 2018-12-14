@@ -20,7 +20,7 @@
 
 <main class="container">
     <section class="page_home">
-        <section class="cursos_destaque">
+        <section class="box_gestor">
             <header>
                 <h3>Cursos em destaque</h3>
             </header>
@@ -41,37 +41,13 @@
             </div>
         </section>
 
-        {{-- <section class="row">
-            <section class="depoimentos">
-                <div id="carouselContent" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active text-center p-4">
-                                <p>lorem ipsum (imagine longer text)</p>
-                        </div>
-                        <div class="carousel-item text-center p-4">
-                            
-                            <p>lorem ipsum (imagine longer text)</p>
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselContent" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselContent" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </section>
-        </section> --}}
-
         <section class="row">
             <section class="container">
-                <div class="info_cursos_abertos">
+                <div class="box_gestor">
                     <header>
                         <h3>Próximos cursos</h3>
                     </header>
-                    <table class="table table-hover table-bordered table-sm" style="text-align: center;">
+                    <table class="table table-hover table-bordered table-sm">
                         <thead class="bg-primary text-white">
                             <tr>
                                 <th scope="col">Curso</th>

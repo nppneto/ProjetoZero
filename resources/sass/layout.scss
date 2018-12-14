@@ -13,7 +13,9 @@
 
             li {
                 display: inline-block;
-                border: 1px dotted silver;
+                border-left: 1px dotted silver;
+                border-top: 1px dotted silver;
+                border-bottom: 1px dotted silver; 
                 padding: 7px 100px 10px 20px;
 
                 h5 {
@@ -37,7 +39,7 @@
     }
 }
 
-footer {
+.footer {
     width: 100%;
     background-color: $primary;
     min-height: 250px;
@@ -50,7 +52,7 @@ footer {
     margin-bottom: 20px;
 }
 
-footer p {
+.footer p {
     font-size: 13px;
     color: #CCC;
     padding-bottom: 0px;
