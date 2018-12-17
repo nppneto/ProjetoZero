@@ -27,7 +27,8 @@ class ManagerCursoController extends Controller
                   WHERE ativo = 1";
 
         $cursos = DB::select($query);
-        return view('curso.index', [ 'cursos' => $cursos ]);
+
+        return view('curso.index', ['cursos' => $cursos]);
     }
 
     // Não será usado

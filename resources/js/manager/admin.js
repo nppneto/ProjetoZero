@@ -4,4 +4,5 @@ try {
     require('admin-lte/bower_components/bootstrap/dist/js/bootstrap.min.js');
     require('./ClassCurso');
     require('./ClassPagina');
+    require('./ClassNoticia');
 } catch (e) {}

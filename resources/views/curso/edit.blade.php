@@ -13,7 +13,7 @@
                     <h3 class="box-title">Editar</h3>
                 </div>
                 <div class="box-body">
-                    <form role="form">
+                    <form id="frmEditCurso" role="form">
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="titulo">Título:</label>
@@ -78,6 +78,11 @@
         </div>
     </div>
 
-</section>
-    
+</section>    
+@endsection
+@section('script')
+<script>
+    var classCurso = new ClassCurso(document.querySelector('meta[name="csrf-token"]').attributes.content.value);
+    window.document.querySelector('#frmEditCurso').addEventListener('submit', function(e) { classCurso.up(e); });
+</script>
 @endsection
