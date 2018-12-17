@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ManagerController extends Controller
 {
     public function __construct() { 
-        //$this->middleware('auth'); 
+        $this->middleware('auth'); 
     }
     
     public function index() {
@@ -18,5 +18,9 @@ class ManagerController extends Controller
         $total = DB::select($query);
 
         return view('admin.manager', ['total' => $total]);
+    }
+
+    public function logout() {
+        Auth::logout();
     }
 }

@@ -21,9 +21,9 @@ Route::get('/contato/{id}', 'ContatoController@getOrcamento')->name('site.contat
 Route::get('/contato', 'ContatoController@index')->name('site.contato');
 Route::post('/contato', 'ContatoController@sendEmail');
 
-Route::get('/manager', 'ManagerController@index');
-
 Route::prefix('manager')->group(function(){
+    Route::post('/logout', 'ManagerController@logout');
+    Route::get('/', 'ManagerController@index');
     Route::resource('curso', 'ManagerCursoController');    
     Route::resource('noticia', 'ManagerNoticiaController');
 });
@@ -37,3 +37,7 @@ Route::get('/gestor', function(){
 Route::get('/servicos', function(){
     return view('site.servico');
 })->name('site.servico');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

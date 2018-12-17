@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.site')
 @section('title', 'Gestor - Administração Empresarial e Consultoria Condominial')
 @section('content')
 

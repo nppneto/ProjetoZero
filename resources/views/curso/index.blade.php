@@ -20,20 +20,17 @@
                 <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col">Curso</th>
-                        <th scope="col">Endereço</th>
-                        <th scope="col">Dt-Início</th>
-                        <th scope="col">Dt-Fim</th>
-                        <th scope="col">H-Início</th>
-                        <th scope="col">H-Fim</th>
-                        <th scope="col">Período</th>
-                        {{-- <th scope="col">Descrição</th> --}}
-                        {{-- <th scope="col">Ativo</th> --}}
-                        <th scope="col">Preço</th>
-                        <th scope="col">Destaque</th>
-                        <th scope="col">Disponível</th>
-                        <th scope="col">Opções</th>
-                        {{-- <th scope="col">Texto de Destaque</th> --}}
+                        <th>Curso</th>
+                        <th>Endereço</th>
+                        <th>Dt-Início</th>
+                        <th>Dt-Fim</th>
+                        <th>H-Início</th>
+                        <th>H-Fim</th>
+                        <th>Período</th>
+                        <th>Preço</th>
+                        <th>Destaque</th>
+                        <th>Disponível</th>
+                        <th>Opções</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,14 +43,16 @@
                             <td>{{ $curso->horario_inicio }}</td>
                             <td>{{ $curso->horario_fim }}</td>
                             <td>{{ $curso->periodo }}</td>
-                            {{-- <td>{{ $curso->ativo }}</td> --}}
                             <td>{{ $curso->valor }}</td>
                             <td>{{ ($curso->destaque === 1) ? 'Sim' : 'Não' }}</td>
                             <td>{{ ($curso->disponivel === 1) ? 'Sim' : 'Não' }}</td>
-                            {{-- <td>{{ $curso->txt_destaque }}</td> --}}
                             <td>
-                                <a href="curso/{{ $curso->id }}/edit" type="button" class="btn btn-primary btn-xs">Editar</a>
-                                <a href="javascript:void(0);" data-id="{{ $curso->id }}" onclick="deletar(this)"  type="button" class="btn btn-danger btn-xs">Excluir</a>
+                                <a href="curso/{{ $curso->id }}/edit" type="button" class="btn btn-primary">
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                </a>
+                                <a href="javascript:void(0);" data-id="{{ $curso->id }}" onclick="deletar(this)"  type="button" class="btn btn-danger">
+                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                </a>
                             </td>
                         </tr>
                     @endforeach
@@ -61,7 +60,9 @@
             </div>
             <div class="box-footer clearfix">
                 <div class="pull-right">
-                    <a href="/manager/curso/create" class="btn bg-olive margin">Adicionar</a>
+                    <a href="/manager/curso/create" class="btn bg-olive margin">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>         
         </div>
