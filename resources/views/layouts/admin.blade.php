@@ -18,10 +18,9 @@
     <div class="wrapper">
         <!-- Main Header -->
         <header class="main-header">
-            <!-- Logo -->
-            {{-- <a href="index2.html" class="logo"><b>Gestor</b>ADMIN</a> --}}
             <div class="logo">
-                <img src="/images/gestor.png" width="30" height="30" alt=""> GESTOR RH
+                <img src="/images/gestor.png" width="30" height="30" alt="">
+                <a href="/manager" style="color: #fff;">GESTOR RH</a>
             </div>
             
             <!-- Header Navbar -->
@@ -71,7 +70,6 @@
 
                 <!-- Sidebar Menu -->
                 <ul class="sidebar-menu">
-                    <li><a href="/manager/pagina"><span>Páginas</span></a></li>
                     <li><a href="/manager/curso"><span>Cursos</span></a></li>
                     <li><a href="/manager/noticia"><span>Notícias</span></a></li>
                 </ul><!-- /.sidebar-menu -->
@@ -81,13 +79,8 @@
         <div class="content-wrapper">
             <section class="content-header">
                  <h1>
-                    Page Header
-                    <small>Optional description</small>
+                    Painel administrativo
                 </h1>
-                <ol class="breadcrumb">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-                    <li class="active">Here</li>
-                </ol>
             </section>
 
             <section class="content">
