@@ -8,6 +8,7 @@ class HomeController extends Controller
 {
     public function index()
     {
+        // Consulta Cursos
         $query = "SELECT
                         id,
                         titulo,
@@ -25,9 +26,18 @@ class HomeController extends Controller
                   
         $cursos = DB::select($query);
 
+        // Consulta Destaques
         $query = "SELECT id, titulo, txt_destaque FROM curso WHERE destaque = 1 LIMIT 3";
 
         $cursosDestaque = DB::select($query);
-        return view('site.home', ['cursos' => $cursos, 'destaques' => $cursosDestaque ]);
+
+        // Consulta Notícias
+        $query = "SELECT mensagem FROM noticia";
+
+        $noticia = DB::select($query);
+
+        return view('site.home', ['cursos' => $cursos, 'destaques' => $cursosDestaque, 'noticias' => $noticia]);
     }
+
+
 }

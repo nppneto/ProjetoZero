@@ -13,7 +13,7 @@
     <div class="mensagem">
         <div class="container-fluid">
             <p class="microsoft marquee">
-                <span>Segundo delegado, homem disse que queria expulsar o animal, mas não teve a intenção de matar. Depoimento aconteceu na tarde desta quinta-feira</span>
+                <span>{{ $noticias[0]->mensagem }}</span>
             </p>
     </div>
 </section>
