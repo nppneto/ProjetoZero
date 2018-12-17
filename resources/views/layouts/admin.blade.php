@@ -73,6 +73,7 @@
                 <ul class="sidebar-menu">
                     <li><a href="/manager/pagina"><span>Páginas</span></a></li>
                     <li><a href="/manager/curso"><span>Cursos</span></a></li>
+                    <li><a href="/manager/noticia"><span>Notícias</span></a></li>
                 </ul><!-- /.sidebar-menu -->
             </section>
         </aside>

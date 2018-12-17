@@ -26,6 +26,7 @@ Route::get('/manager', 'ManagerController@index');
 Route::prefix('manager')->group(function(){
     Route::resource('curso', 'ManagerCursoController');    
     Route::resource('pagina', 'ManagerPaginaController');
+    Route::resource('noticia', 'ManagerNoticiaController');
 });
 
 // ----------------------------------------------------------------
@@ -37,3 +38,7 @@ Route::get('/gestor', function(){
 Route::get('/servicos', function(){
     return view('site.servico');
 })->name('site.servico');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

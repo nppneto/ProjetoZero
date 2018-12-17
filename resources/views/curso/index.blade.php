@@ -3,7 +3,7 @@
 @section('title', 'Cursos')
 
 @section('content')
-
+{{-- Tabela de Cursos --}}
 <section class="content">
     <div class="row">
         <div class="col-md-12">
@@ -68,6 +68,8 @@
         </div>
     </div>
 </section>
+{{-- Tabela de Notícia --}}
+
 @endsection
 @section('script')
 <script>
