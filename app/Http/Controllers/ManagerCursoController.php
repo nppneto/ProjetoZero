@@ -92,7 +92,6 @@ class ManagerCursoController extends Controller
                             :txt_destaque)";
         
         DB::insert($query, $response);
-        return view('curso.index');
     }
 
     public function show($id)
@@ -103,6 +102,7 @@ class ManagerCursoController extends Controller
     public function edit($id)
     {
         $query = "SELECT
+                        id,
                         titulo,
                         endereco,
                         dt_inicio,
@@ -125,11 +125,11 @@ class ManagerCursoController extends Controller
         return view('curso.edit', ['curso' => $curso]);
     }
 
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
         $response = array(
-            ':id' => $request->$id,
-            ':titulo' => $request->titulo,
+            ':id' => $id,
+            ':titulo' =>  $request->get('titulo'),
             ':endereco' => $request->endereco,
             ':dt_inicio' => $request->dt_inicio,
             ':dt_fim' => $request->dt_fim,
@@ -137,7 +137,6 @@ class ManagerCursoController extends Controller
             ':horario_fim' => $request->horario_fim,
             ':periodo' => $request->periodo,
             ':descricao' => $request->descricao,
-            ':ativo' => $request->ativo,
             ':valor' => $request->valor,
             ':destaque' => $request->destaque,
             ':disponivel' => $request->disponivel,
@@ -155,7 +154,6 @@ class ManagerCursoController extends Controller
                         horario_fim = :horario_fim, 
                         periodo = :periodo, 
                         descricao = :descricao, 
-                        ativo = :ativo, 
                         valor = :valor, 
                         destaque = :destaque, 
                         disponivel = :disponivel, 
@@ -164,7 +162,6 @@ class ManagerCursoController extends Controller
                     id = :id";
 
         DB::update($query, $response);
-        return redirect()->action('ManagerCursoController@index');
     }
 
     public function destroy($id)

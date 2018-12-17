@@ -5,7 +5,6 @@
 @section('content')
 
 <section class="content">
-
     <div class="row">
         <div class="col-md-12">
             <div class="box">
@@ -70,6 +69,11 @@
                         </div>
                     </form>
                 </div>
+                
+                <div class="overlay">
+                    <i class="fa fa-refresh fa-spin"></i>
+                </div>
+                
             </div>
         </div>
     </div>

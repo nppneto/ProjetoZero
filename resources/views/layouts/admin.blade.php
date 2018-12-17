@@ -32,12 +32,13 @@
                         <li class="dropdown user user-menu">
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-user-o" aria-hidden="true"></i>
                                 <span class="hidden-xs">Alexander Pierce</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <!-- The user image in the menu -->
                                 <li class="user-header">
                                     <p>
+                                            
                                         Alexander Pierce - Web Developer
                                         <small>Member since Nov. 2012</small>
                                     </p>
@@ -48,7 +49,7 @@
                                         <a href="#" class="btn btn-default btn-flat">Perfil</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Sair</a>
+                                        <a href="#" class="btn btn-danger btn-flat">Sair</a>
                                     </div>
                                 </li>
                             </ul>

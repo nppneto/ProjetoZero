@@ -5,7 +5,6 @@
 @section('content')
 
 <section class="content">
-
     <div class="row">
         <div class="col-md-12">
             <div class="box">
@@ -14,6 +13,8 @@
                 </div>
                 <div class="box-body">
                     <form id="frmEditCurso" role="form">
+                        <input type="hidden" name="" id="hiddenId" data-id="{{ $curso[0]->id }}">
+                        <input type="hidden" name="_method" value="PUT">
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="titulo">Título:</label>
@@ -21,7 +22,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="endereco">Endereço:</label>
-                                <input type="text" class="form-control" id="inputEndereço" value="{{ $curso[0]->endereco }}" placeholder="Entre com o endereço...">
+                                <input type="text" class="form-control" id="inputEndereco" value="{{ $curso[0]->endereco }}" placeholder="Entre com o endereço...">
                             </div>
                             <div class="form-group">
                                 <label for="dataInicio">Data Inicial:</label>
@@ -60,10 +61,9 @@
                                 <textarea class="form-control" name="txtDestaque" id="inputTxtDestaque" cols="30" rows="5" minlength="72" maxlength="144">{{ $curso[0]->txt_destaque }}</textarea>
                             </div>
                             <div class="form-group">                                
-                                {{-- <label for="ativo">Ativo:</label>
-                                <input type="checkbox" id="chkAtivo" {{ ($curso[0]->ativo === 1) ? 'checked' : '' }}> --}}
                                 <label for="destaque">Destaque:</label>
                                 <input type="checkbox" id="chkDestaque" {{ ($curso[0]->destaque === 1) ? 'checked' : '' }}>
+
                                 <label for="disponivel">Disponível:</label>
                                 <input type="checkbox" id="chkDisponivel" {{ ($curso[0]->disponivel === 1) ? 'checked' : '' }}>
                             </div>
@@ -78,10 +78,14 @@
                         </div>
                     </form>
                 </div>
+
+                <div class="overlay">
+                    <i class="fa fa-refresh fa-spin"></i>
+                </div>
+
             </div>
         </div>
     </div>
-
 </section>    
 @endsection
 @section('script')
