@@ -25,7 +25,6 @@ Route::get('/manager', 'ManagerController@index');
 
 Route::prefix('manager')->group(function(){
     Route::resource('curso', 'ManagerCursoController');    
-    Route::resource('pagina', 'ManagerPaginaController');
     Route::resource('noticia', 'ManagerNoticiaController');
 });
 
