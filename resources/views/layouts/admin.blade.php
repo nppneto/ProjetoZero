@@ -198,7 +198,6 @@
                 <ul class="sidebar-menu">
                     <li class="header">HEADER</li>
                     <!-- Optionally, you can add icons to the links -->
-                    <li><a href="/manager/pagina"><span>Páginas</span></a></li>
                     <li><a href="/manager/curso"><span>Cursos</span></a></li>
                     <li><a href="/manager/noticia"><span>Notícias</span></a></li>
                     {{-- <li class="treeview">
