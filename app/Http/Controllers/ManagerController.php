@@ -13,6 +13,10 @@ class ManagerController extends Controller
     
     public function index() {
 
-        return view('admin.manager');
+        $query = "SELECT COUNT(*) AS total_cursos FROM curso";
+
+        $total = DB::select($query);
+
+        return view('admin.manager', ['total' => $total]);
     }
 }
