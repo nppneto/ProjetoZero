@@ -69,8 +69,12 @@
                             </div>
                         </div>            
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary">Atualizar</button>
-                            <a href="/manager/curso" type="button" class="btn btn-primary">Voltar</a> <!-- Ou href="{{ route('curso.index') }}" -->
+                            <a href="/manager/curso" type="button" class="btn btn-primary">
+                                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                            </a> <!-- Ou href="{{ route('curso.index') }}" -->
+                            <button type="submit" class="btn btn-success">
+                                <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                            </button>
                         </div>
                     </form>
                 </div>
