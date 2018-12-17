@@ -32,15 +32,13 @@
                         <li class="dropdown user user-menu">
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-user-o" aria-hidden="true"></i>
-                                <span class="hidden-xs">Alexander Pierce</span>
+                                <span class="hidden-xs">{{ Auth::user()->name }}</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="user-header">
                                     <p>
-                                            
-                                        Alexander Pierce - Web Developer
-                                        <small>Member since Nov. 2012</small>
+                                        {{ Auth::user()->name }} - {{ Auth::user()->email }}
+                                        <small>Desde: {{ Auth::user()->created_at->format('d/m/Y') }}</small>
                                     </p>
                                 </li>
                                 <!-- Menu Footer-->
@@ -80,7 +78,7 @@
         <div class="content-wrapper">
             <section class="content-header">
                  <h1>
-                    Painel administrativo
+                    Painel Administrativo
                 </h1>
             </section>
 
@@ -94,7 +92,7 @@
             <div class="pull-right hidden-xs">
                 Developer
             </div>
-            <strong>Copyright © {{ now()->year }} <i>Gesto RH</i>.</strong> Todos os direitos reservados.
+            <strong>Copyright © {{ now()->year }} <i>Gestor LTDA</i>.</strong> Todos os direitos reservados.
         </footer>
 
     </div>

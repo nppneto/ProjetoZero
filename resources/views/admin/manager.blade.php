@@ -8,7 +8,7 @@
         <div class="col-lg-3 col-xs-6">
             <div class="small-box bg-aqua">
                 <div class="inner">
-                    <h3>NAN</h3>
+                    <h3>{{ $total[0]->total_cursos }}</h3>
                     <p>Cursos cadastrados</p>
                 </div>
                     <div class="icon">
