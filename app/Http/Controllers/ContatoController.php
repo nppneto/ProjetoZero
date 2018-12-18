@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Mail\SendMailContato;
+use App\Contato;
 
 class ContatoController extends Controller
 {
@@ -19,12 +21,13 @@ class ContatoController extends Controller
     }
 
     public function sendEmail(Request $request) {
-        $response = array(
-            'nome' => $request->nome,
-            'email' => $request->email,
-            'assunto' => $request->assunto,
-            'comentario' => $request->comentario
-        );
-        return response()->json($request); 
+        $contato = new Contato();
+
+        $contato->setNome($request->nome);
+        $contato->setEmail($request->email);
+        $contato->setAssunto($request->assunto);
+        $contato->setMensagem($request->mensagem);
+
+        Mail::to($request->email)->send(new SendMailContato($contato));
     }
 }

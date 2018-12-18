@@ -6,20 +6,19 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use App\Contato;
 
-class Contato extends Mailable
+class SendMailContato extends Mailable
 {
     use Queueable, SerializesModels;
+    public $contato;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        //
-    }
+    public function __construct(Contato $contato) { $this->contato = $contato; }
 
     /**
      * Build the message.
@@ -28,14 +27,6 @@ class Contato extends Mailable
      */
     public function build()
     {
-        // $this->from('nelsonp2n@gmail.com')
-        //             ->view('view.contato');
-        
-        $this->view('contato');
-
-        $this->withSwiftMessage(function ($message) {
-            $message->getHeaders()
-                    ->addTextHeader('Custom-Header', 'teste');
-        });
+        return $this->view('emails.contato')->with(['contato' => $this->contato]);
     }
 }
