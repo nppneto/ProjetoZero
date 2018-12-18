@@ -23,9 +23,9 @@ class ManagerNoticiaController extends Controller
                     FROM 
                         noticia";
 
-        $noticia = DB::select($query);
+        $noticias = DB::select($query);
 
-        return view('noticia.index', ['noticias' => $noticia]);
+        return view('noticia.index', ['noticias' => $noticias]);
 
     }
 
@@ -42,5 +42,25 @@ class ManagerNoticiaController extends Controller
         $noticia = DB::select($query, [':id' => $id]);
 
         return view('noticia.edit', ['noticias' => $noticia]);
+    }
+
+    public function update(Request $request, $id) {
+
+        $response = array(
+            ':id' => $id,
+            ':titulo' => $request->titulo,
+            ':mensagem' => $request->mensagem
+        );
+
+        $query = "UPDATE 
+                        noticia
+                    SET 
+                        titulo = :titulo, 
+                        mensagem = :mensagem, 
+                        updated_at = NOW()
+                    WHERE 
+                        id = :id";
+        
+        DB::update($query, $response);
     }
 }

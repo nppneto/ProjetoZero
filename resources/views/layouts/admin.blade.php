@@ -44,10 +44,15 @@
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                                        <a href="/register" class="btn btn-default btn-flat">Criar Usuário</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-danger btn-flat">Sair</a>
+                                        <a class="btn btn-danger btn-flat" href="{{ route('logout') }}" 
+                                           onclick="event.preventDefault(); 
+                                           document.getElementById('logout-form').submit();">{{ __('Sair') }}</a>
+                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                             @csrf
+                                         </form>
                                     </div>
                                 </li>
                             </ul>

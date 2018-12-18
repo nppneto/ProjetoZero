@@ -88,15 +88,14 @@ class ClassCurso {
         let destaque = 0;
         let disponivel = 0;
 
-        if(frm.target.querySelector('#chkDestaque').checked == 'true')
+        if(frm.target.querySelector('#chkDestaque').checked === true)
             destaque = 1
 
-        if(frm.target.querySelector('#chkDisponivel').checked == 'true')
+        if(frm.target.querySelector('#chkDisponivel').checked === true)
             disponivel = 1;
 
         data.append('destaque', destaque);
         data.append('disponivel', disponivel);
-        data.append('id', frm.target.querySelector('#hiddenId').dataset.id);
 
         const _headers = new Headers({ 'X-CSRF-TOKEN': this.csrf });
         $('.overlay').show();

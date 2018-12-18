@@ -29,7 +29,11 @@
                                 <td>{{ $noticias[0]->titulo }}</td>
                                 <td>{{ $noticias[0]->mensagem }}</td>
                                 <td>{{ $noticias[0]->updated_at }}</td>
-                                <td><a href="noticia/{{ $noticias[0]->id }}/edit" type="button" class="btn btn-primary btn-xs">Editar</a></td>
+                                <td>
+                                    <a href="noticia/{{ $noticias[0]->id }}/edit" type="button" class="btn btn-primary">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                    </a>
+                                </td>
                             </tbody>
                         </table>
                     </div>

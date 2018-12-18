@@ -14,6 +14,8 @@
                 </div>
                 <div class="box-body">
                     <form id="frmEditNoticia" role="form">
+                        <input type="hidden" name="" id="hiddenId" data-id="{{ $noticias[0]->id }}">
+                        <input type="hidden" name="_method" value="PUT">
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="titulo">Título:</label>
@@ -24,10 +26,17 @@
                                 <input type="text" class="form-control" id="inputMensagem" value="{{ $noticias[0]->mensagem }}" placeholder="Entre com a mensagem...">
                             </div>           
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary">Atualizar</button>
-                            <a href="/manager/noticia" type="button" class="btn btn-primary">Voltar</a> <!-- Ou href="{{ route('noticia.index') }}" -->
+                            <a href="/manager/noticia" type="button" class="btn btn-primary">
+                                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                            </a>
+                            <button type="submit" class="btn btn-success">
+                                <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                            </button>
                         </div>
                     </form>
+                    <div class="overlay">
+                        <i class="fa fa-refresh fa-spin"></i>
+                    </div>
                 </div>
             </div>
         </div>

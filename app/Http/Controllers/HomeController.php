@@ -34,9 +34,9 @@ class HomeController extends Controller
         // Consulta Notícias
         $query = "SELECT mensagem FROM noticia";
 
-        $noticia = DB::select($query);
+        $noticias = DB::select($query);
 
-        return view('site.home', ['cursos' => $cursos, 'destaques' => $cursosDestaque, 'noticias' => $noticia]);
+        return view('site.home', ['cursos' => $cursos, 'destaques' => $cursosDestaque, 'noticias' => $noticias]);
     }
 
 

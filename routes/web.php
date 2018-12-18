@@ -22,11 +22,12 @@ Route::get('/contato', 'ContatoController@index')->name('site.contato');
 Route::post('/contato', 'ContatoController@sendEmail');
 
 Route::prefix('manager')->group(function(){
-    Route::post('/logout', 'ManagerController@logout');
     Route::get('/', 'ManagerController@index');
     Route::resource('curso', 'ManagerCursoController');    
     Route::resource('noticia', 'ManagerNoticiaController');
 });
+
+Route::get('/register', 'RegisterController@create');
 
 // ----------------------------------------------------------------
 

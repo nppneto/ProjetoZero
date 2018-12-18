@@ -129,7 +129,7 @@ class ManagerCursoController extends Controller
     {
         $response = array(
             ':id' => $id,
-            ':titulo' =>  $request->get('titulo'),
+            ':titulo' =>  $request->titulo,
             ':endereco' => $request->endereco,
             ':dt_inicio' => $request->dt_inicio,
             ':dt_fim' => $request->dt_fim,
