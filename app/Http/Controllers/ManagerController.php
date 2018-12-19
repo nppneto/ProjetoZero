@@ -13,7 +13,7 @@ class ManagerController extends Controller
     
     public function index() {
 
-        $query = "SELECT COUNT(*) AS total_cursos FROM curso";
+        $query = "SELECT COUNT(*) AS total_cursos FROM curso WHERE ativo = 1";
 
         $total = DB::select($query);
 

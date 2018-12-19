@@ -19,6 +19,9 @@ class ClassCurso {
         data.append('horario_inicio', frm.target.querySelector('#inputHoraInicio').value);
         data.append('horario_fim', frm.target.querySelector('#inputHoraFim').value);
         data.append('periodo', frm.target.querySelector('#inputPeriodo').value);
+        data.append('objetivo', frm.target.querySelector('#inputObjetivo').value);
+        data.append('requisitos', frm.target.querySelector('#inputRequisitos').value);
+        data.append('metodologia', frm.target.querySelector('#inputMetodologia').value);
         data.append('descricao', frm.target.querySelector('#inputDescricao').value);
         data.append('valor', frm.target.querySelector('#inputValor').value);
         data.append('txt_destaque', frm.target.querySelector('#inputTxtDestaque').value);
@@ -33,9 +36,10 @@ class ClassCurso {
             body: data
         })
         .then(response => response.ok)
-        .then(() => {
+        .then(e => {
             $('.overlay').hide();
             location.href = '/manager/curso';
+            // console.log(e);
         })
         .catch(err => {
             console.log(err);
@@ -80,6 +84,9 @@ class ClassCurso {
         data.append('horario_inicio', frm.target.querySelector('#inputHoraInicio').value);
         data.append('horario_fim', frm.target.querySelector('#inputHoraFim').value);
         data.append('periodo', frm.target.querySelector('#inputPeriodo').value);
+        data.append('objetivo', frm.target.querySelector('#inputObjetivo').value);
+        data.append('requisitos', frm.target.querySelector('#inputRequisitos').value);
+        data.append('metodologia', frm.target.querySelector('#inputMetodologia').value);
         data.append('descricao', frm.target.querySelector('#inputDescricao').value);
         data.append('valor', frm.target.querySelector('#inputValor').value);
         data.append('txt_destaque', frm.target.querySelector('#inputTxtDestaque').value);

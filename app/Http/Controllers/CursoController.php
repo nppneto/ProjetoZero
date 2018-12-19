@@ -39,6 +39,9 @@ class CursoController extends Controller
                         TIME_FORMAT(horario_inicio, '%H:%i') AS horario_inicio,
                         TIME_FORMAT(horario_fim, '%H:%i') AS horario_fim,
                         periodo,
+                        objetivo,
+                        metodologia,
+                        requisito,
                         descricao,
                         valor
                   FROM

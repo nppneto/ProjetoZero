@@ -58,7 +58,10 @@ class ManagerCursoController extends Controller
             ':valor' => $request->valor,
             ':destaque' => 0,
             ':disponivel' => 0,
-            ':txt_destaque' => $request->txt_destaque
+            ':txt_destaque' => $request->txt_destaque,
+            ':objetivo' => $request->objetivo,
+            ':metodologia' => $request->metodologia,
+            ':requisito' => $request->requisitos
         );
 
         $query = "INSERT INTO 
@@ -75,7 +78,10 @@ class ManagerCursoController extends Controller
                                 valor, 
                                 destaque, 
                                 disponivel, 
-                                txt_destaque)
+                                txt_destaque,
+                                objetivo,
+                                metodologia,
+                                requisito)
                     VALUES(
                             :titulo, 
                             :endereco, 
@@ -89,7 +95,10 @@ class ManagerCursoController extends Controller
                             :valor, 
                             :destaque, 
                             :disponivel, 
-                            :txt_destaque)";
+                            :txt_destaque,
+                            :objetivo,
+                            :metodologia,
+                            :requisito)";
         
         DB::insert($query, $response);
     }
@@ -115,7 +124,10 @@ class ManagerCursoController extends Controller
                         valor,
                         destaque,
                         disponivel,
-                        txt_destaque
+                        txt_destaque,
+                        objetivo,
+                        metodologia,
+                        requisito
                   FROM
                         curso
                   WHERE
@@ -140,7 +152,10 @@ class ManagerCursoController extends Controller
             ':valor' => $request->valor,
             ':destaque' => $request->destaque,
             ':disponivel' => $request->disponivel,
-            ':txt_destaque' => $request->txt_destaque
+            ':txt_destaque' => $request->txt_destaque,
+            ':objetivo' => $request->objetivo,
+            ':metodologia' => $request->metodologia,
+            ':requisitos' => $request->requisitos
         );
 
         $query = "UPDATE 
@@ -157,7 +172,10 @@ class ManagerCursoController extends Controller
                         valor = :valor, 
                         destaque = :destaque, 
                         disponivel = :disponivel, 
-                        txt_destaque = :txt_destaque
+                        txt_destaque = :txt_destaque,
+                        objetivo = :objetivo,
+                        metodologia = :metodologia,
+                        requisito = :requisitos
                  WHERE 
                     id = :id";
 

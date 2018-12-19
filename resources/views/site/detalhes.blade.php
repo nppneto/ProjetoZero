@@ -59,26 +59,26 @@
             <h4>
                 <b>Objetivo</b>
             </h4>
-            <p class="text-left">{{ $curso[0]->descricao }}</p>
+            <p class="text-left">{{ $curso[0]->objetivo }}</p>
         </section>
 
         <section class="content_curso">
             <h4>
-                <b>Pré - requisitos</b>
+                <b>Pré - Requisitos</b>
             </h4>
-            <p class="text-left">{{ $curso[0]->descricao }}</p>
+            <p class="text-left">{{ $curso[0]->requisito }}</p>
         </section> 
         
         <section class="content_curso">
             <h4>
                 <b>Metodologia</b>
             </h4>
-            <p class="text-left">{{ $curso[0]->descricao }}</p>
+            <p class="text-left">{{ $curso[0]->metodologia }}</p>
         </section>
 
         <section class="content_curso">
             <h4>
-                <b>Conteúdo do curso: </b>
+                <b>Conteúdo do Curso: </b>
             </h4>
             <p class="text-left">{{ $curso[0]->descricao }}</p>
         </section>

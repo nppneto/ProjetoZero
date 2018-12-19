@@ -49,7 +49,19 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="descricao">Descrição:</label>
+                                <label for="descricao">Objetivo:</label>
+                                <textarea class="form-control" name="descricao" id="inputObjetivo" cols="30" rows="10">{{ $curso[0]->objetivo }}</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="descricao">Pré-Requisitos:</label>
+                                <textarea class="form-control" name="descricao" id="inputRequisitos" cols="30" rows="10">{{ $curso[0]->requisito }}</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="descricao">Metodologia:</label>
+                                <textarea class="form-control" name="descricao" id="inputMetodologia" cols="30" rows="10">{{ $curso[0]->metodologia }}</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="descricao">Conteúdo do Curso:</label>
                                 <textarea class="form-control" name="descricao" id="inputDescricao" cols="30" rows="10">{{ $curso[0]->descricao }}</textarea>
                             </div>
                             <div class="form-group">
