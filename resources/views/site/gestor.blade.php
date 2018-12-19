@@ -68,6 +68,9 @@
     </section> 
 
     <section class="box_gestor">
+        <header>
+            <h3 id="historia">Mensagens</h3>
+        </header>
         <div class="container">
             <blockquote class="blockquote text-right">
                 <p class="mb-0">“Cada sonho que você deixa pra trás, é um pedaço do seu futuro que deixou de existir”<br/></p>

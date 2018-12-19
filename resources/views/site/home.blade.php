@@ -22,7 +22,7 @@
     <section class="page_home">
         <section class="box_gestor">
             <header>
-                <h3>Cursos em destaque</h3>
+                <h3>Cursos em Destaque</h3>
             </header>
             <div class="row">
                 @foreach ($destaques as $destaque)
@@ -45,7 +45,7 @@
             <section class="container">
                 <div class="box_gestor">
                     <header>
-                        <h3>Próximos cursos</h3>
+                        <h3>Próximos Cursos</h3>
                     </header>
                     <table class="table table-hover table-bordered table-sm">
                         <thead class="bg-primary text-white">

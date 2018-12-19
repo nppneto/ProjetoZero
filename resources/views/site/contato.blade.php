@@ -42,7 +42,7 @@
                 <div class="mensagem">
                     <h4>Gestor RH</h4>
                     <br />
-                    <p>Desde já agradecemos o seu interesse nos nossos cursos, nosso esforço é em oferecer a melhor apredizagem para os nossos alunos.</p>
+                    <p>Desde já agradecemos o seu interesse em nossos cursos. Nossa meta é oferecer o melhor conteúdo para o aprendizado de nossos alunos.</p>
                     <p>Atenciosamente, <br />Diretoria Gestor RH</p>
                 </div>
             </aside>

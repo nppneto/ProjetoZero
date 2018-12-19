@@ -2,6 +2,7 @@ import Typewriter from 't-writer.js'
 import { isNull } from 'util';
 
 const target = document.querySelector('.tw');
+target.style.fontFamily = "Charm, cursive";
 if (!isNull(target)) 
 {
   const options = {

@@ -6,7 +6,7 @@
 <div class="container">
     <section class="box_gestor">
         <header>
-            <h3 id="historia">Principais cursos</h3>
+            <h3 id="historia">Nossos Cursos</h3>
         </header>
                 
         <div class="row">

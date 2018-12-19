@@ -21,7 +21,7 @@
                         Santos (SP)</h5>
                     <div class="body_box_info">
                         <p>
-                            <b>Logradouro:</b>
+                            <b>Endereço:</b>
                             Av: Arnaldo de Carvalho, nº 92, Sala nº 22
                         </p>
                     </div>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Mail\SendMailContato;
 use App\Contato;
+use Mail;
 
 class ContatoController extends Controller
 {
@@ -28,6 +29,6 @@ class ContatoController extends Controller
         $contato->setAssunto($request->assunto);
         $contato->setMensagem($request->mensagem);
 
-        Mail::to($request->email)->send(new SendMailContato($contato));
+        Mail::to('nelsonp2n@gmail.com')->send(new SendMailContato($contato));
     }
 }

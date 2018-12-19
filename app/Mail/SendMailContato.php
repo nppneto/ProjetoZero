@@ -27,6 +27,8 @@ class SendMailContato extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.contato')->with(['contato' => $this->contato]);
+        return $this->view('emails.contato')
+        ->subject('Gestor Mail System')
+        ->with(['contato' => $this->contato]);
     }
 }
