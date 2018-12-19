@@ -2,9 +2,9 @@ import Typewriter from 't-writer.js'
 import { isNull } from 'util';
 
 const target = document.querySelector('.tw');
-target.style.fontFamily = "Charm, cursive";
 if (!isNull(target)) 
 {
+  target.style.fontFamily = "Charm, cursive";
   const options = {
     loop: true,
     typeColor: 'White'

@@ -13,6 +13,9 @@
 
 <body>
     <header class="header_page">
+        <div class="logo_top" style="display:inline-block;">
+            <a href="/"><img src="/images/logo_top_navbar.png" alt="" height="80" style="margin-left:65px;margin-top:7px"></a>
+        </div>
         <div class="box_info_contato pull-right">
             <ul>
                 <li>
