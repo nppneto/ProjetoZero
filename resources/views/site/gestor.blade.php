@@ -62,7 +62,7 @@
                 GESTÃO (MG) e PROGRAMA DE REVITALIZAÇÃO DOS HOSPITAIS FILANTRÓPICOS - CEALAG/CPFL (SP).
             </p>
             <p> 
-                Vale ressaltar ainda sua experiência como docente, nos cursos de GESTÃO EMPRESARIAL, GESTÃO PÚBLICA, ADMINSTRAÇÃO DE EMPRESAS E CIÊNCIAS
+                Vale ressaltar ainda sua experiência como docente, nos cursos de GESTÃO EMPRESARIAL, GESTÃO PÚBLICA, ADMINISTRAÇÃO DE EMPRESAS E CIÊNCIAS
                 CONTÁBEIS, ministrando aulas nas disciplinas de Administração, Recursos Humanos, Marketing, Telemarketing, Contabilidade e Secretariado.
             </p>
     </section> 

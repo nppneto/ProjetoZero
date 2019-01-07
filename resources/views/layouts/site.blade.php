@@ -128,14 +128,14 @@
                     </ul>
                 </div>
 
-                <div class=" col-sm-4 col-md  col-12 col">
+                {{-- <div class=" col-sm-4 col-md  col-12 col">
                     <h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
                     <ul class="footer_ul2_amrc">
                         <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
                         <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
                         <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
                     </ul>
-                </div>
+                </div> --}}
 
             </div><!-- / row -->
         </div><!-- /content -->
